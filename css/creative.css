@@ -107,18 +107,20 @@ aside {
 
 .navbar-default .nav > li>a:hover,
 .navbar-default .nav>li>a:focus:hover {
-    color: #f05f40;
+    color: black;
 }
 
+/*nav active tab color */
 .navbar-default .nav > li.active>a,
 .navbar-default .nav>li.active>a:focus {
-    color: #f05f40!important;
+    color: black!important;
     background-color: transparent;
 }
 
+/*hover over li active color*/
 .navbar-default .nav > li.active>a:hover,
 .navbar-default .nav>li.active>a:focus:hover {
-    background-color: transparent;
+    background-color: purple;
 }
 
 @media(min-width:768px) {
@@ -127,48 +129,57 @@ aside {
         background-color: transparent;
     }
 
+    /*brand color transparent nav*/
     .navbar-default .navbar-header .navbar-brand {
         color: rgba(255,255,255,.7);
     }
 
+    /*brand hover transparent*/
     .navbar-default .navbar-header .navbar-brand:hover,
     .navbar-default .navbar-header .navbar-brand:focus {
-        color: #fff;
+        color: black;
     }
 
+    /*a tag color transparent nav*/
     .navbar-default .nav > li>a,
     .navbar-default .nav>li>a:focus {
         color: rgba(255,255,255,.7);
     }
 
+    /*a tag hover transparent nav*/
     .navbar-default .nav > li>a:hover,
     .navbar-default .nav>li>a:focus:hover {
-        color: #fff;
+        color: black;
     }
 
+    /*navbar color fade into*/
     .navbar-default.affix {
         border-color: rgba(34,34,34,.05);
         background-color: #fff;
     }
 
+    /*brand color fade into*/
     .navbar-default.affix .navbar-header .navbar-brand {
         font-size: 14px;
         color: #f05f40;
     }
 
+    /*brand color color navbar*/
     .navbar-default.affix .navbar-header .navbar-brand:hover,
     .navbar-default.affix .navbar-header .navbar-brand:focus {
-        color: #eb3812;
+        color: purple;
     }
 
+    /*navbar li color*/
     .navbar-default.affix .nav > li>a,
     .navbar-default.affix .nav>li>a:focus {
-        color: #222;
+        color: purple;
     }
 
+    /*hover over li color navbar*/
     .navbar-default.affix .nav > li>a:hover,
     .navbar-default.affix .nav>li>a:focus:hover {
-        color: #f05f40;
+        color: white;
     }
 }
 

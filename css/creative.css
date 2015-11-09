@@ -230,7 +230,12 @@ aside {
     height: 250px;
     width: 250px;
     border-radius: 50%;
-    margin-bottom: 100px;
+    margin-bottom: 3em;
+}
+
+.skill-header {
+    font-weight: 200;
+    font-size: 26px;
 }
 
 #header-img {
@@ -341,7 +346,7 @@ header .header-content .header-content-inner p {
 
 .section-title {
     text-align: center;
-    font-size: 60px;
+    font-size: 45px;
     font-weight: 200;
     letter-spacing: 2px;
 }

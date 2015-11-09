@@ -184,9 +184,8 @@ aside {
 }
 
 #business {
-    width: 1105px;
-    height: 645px;
-    border: 1px solid black;
+    /*width: 1105px;*/
+    /*height: 645px;*/
     margin: 50px auto 20px;    
 }
 
@@ -198,16 +197,36 @@ aside {
     margin-bottom: 10px;
 }
 
-.card-info {
+.contact-info {
     font-size: 20px;
     font-weight: 200;
     text-align: left;
     margin-top: 7px;
 }
 
-.card-img-col {
-    text-align: right;
-    width: 42%;
+span.contact-info {
+    margin-left: 25px;
+}
+
+.contact-info-right, .contact-info-left  {
+    text-align: left;
+}
+
+div.contact-info-right img.card-img {
+    margin-left: 6em;
+}
+
+
+@media screen and (max-width: 992px) {
+
+    .contact-info-left, .contact-info-right {
+        text-align: left;
+        margin-left: 12em;
+    }
+
+    div.contact-info-right img.card-img {
+        margin-left: 0;
+    }
 }
 
 .card-img {

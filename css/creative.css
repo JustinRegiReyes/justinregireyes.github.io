@@ -339,6 +339,21 @@ header .header-content .header-content-inner p {
     margin-top: 0;
 }
 
+.section-title {
+    text-align: center;
+    font-size: 60px;
+    font-weight: 200;
+    letter-spacing: 2px;
+}
+
+div.row hr.light {
+    margin-bottom: 57px;
+}
+
+p.text-faded {
+    margin-top: 20px;
+}
+
 .quote {
     font-family: 'Palanquin Dark', sans-serif;
     font-size: 30px;
@@ -375,7 +390,7 @@ header .header-content .header-content-inner p {
     text-align: center;
     color: #fff;
     opacity: 0;
-    background: rgba(240,95,64,.9);
+    background:  rgba(2, 2, 2, 0.5);
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;

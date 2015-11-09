@@ -208,8 +208,12 @@ span.contact-info {
     margin-left: 25px;
 }
 
-.contact-info-right, .contact-info-left  {
+.contact-info-right  {
     text-align: left;
+}
+
+.contact-info-left {
+    text-align: center;
 }
 
 div.contact-info-right img.card-img {

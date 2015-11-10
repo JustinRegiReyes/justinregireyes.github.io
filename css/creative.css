@@ -420,7 +420,7 @@ p.text-faded {
     text-align: center;
     color: #fff;
     opacity: 0;
-    background:  rgba(2, 2, 2, 0.5);
+    background:  rgba(2, 2, 2, 0.7);
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -434,19 +434,19 @@ p.text-faded {
     transform: translateY(-50%);
 }
 
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category,
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-title,
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-content {
     padding: 0 15px;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-title {
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 600;
 }
 
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-content {
     font-size: 18px;
 }
 
@@ -454,13 +454,21 @@ p.text-faded {
     opacity: 1;
 }
 
+.technologies {
+    font-size: .8em;
+}
+
+div.project-title hr {
+    margin: 6px auto;
+}
+
 @media(min-width:768px) {
-    .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
-        font-size: 16px;
+    .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-title {
+        font-size: 20px;
     }
 
-    .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
-        font-size: 22px;
+    .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-content {
+        font-size: 18px;
     }
 }
 

@@ -1,9 +1,10 @@
-/*!
- * Start Bootstrap - Creative Bootstrap Theme (http://startbootstrap.com)
- */
 
-(function($) {
+$(function() {
     "use strict"; // Start of use strict
+    console.log('reload');
+
+    // nav.js
+    var nav = new Nav();
 
     // jQuery for page scrolling feature - requires jQuery Easing plugin
     $('a.page-scroll').bind('click', function(event) {
@@ -32,6 +33,5 @@
         }
     })
 
-    console.log('hello!');
 
-})(jQuery); // End of use strict
+});

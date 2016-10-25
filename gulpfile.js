@@ -16,7 +16,8 @@ gulp.task("concatScripts", function() {
 		'public/js/jquery.js',
 		'public/js/bootstrap.min.js',
 		"public/js/jquery.easing.min.js",
-		'public/js/index.js'
+		'public/js/index.js',
+		"public/js/nav.js"
 		])
 	.pipe(maps.init())
 	.pipe(concat("app.js"))

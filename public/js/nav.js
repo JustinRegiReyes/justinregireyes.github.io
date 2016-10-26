@@ -1,10 +1,12 @@
 var Nav = function() {
 	this.toggleHamburger = nav.toggleHamburger();
+	this.showNav = nav.showNav();
 }
 
 var nav = {
 	toggleHamburger: toggleHamburger,
-	toggleMenu: toggleMenu
+	toggleMenu: toggleMenu,
+	showNav: showNav
 }
 
 function toggleHamburger() {
@@ -25,3 +27,15 @@ function toggleMenu() {
 		$menu.toggleClass('open');
 	}
 }
+
+function showNav() {
+	
+}
+
+
+
+
+
+
+
+

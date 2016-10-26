@@ -86,18 +86,67 @@ $(function() {
         offset: {
             top: 100
         }
-    })
+    });
+
+    // Scroll listener
+    headerListener();
 
 
 });
 
+function headerListener() {
+    var $header = $('header');
+    var top = 0;
+    var currentScroll = 0;
+    var showHeader = false;
+    var timeout = true;
+    var animate = true;
+    // var startchange = $('#startchange');
+    // var offset = startchange.offset();
+    $(document).on('DOMMouseScroll mousewheel', function() {
+        currentScroll = $(this).scrollTop();
+        if((currentScroll == top) && showHeader ) {
+            if(timeout === true) {
+                timeout = false;
+                $("html, body").css({overflow: "hidden"});
+                setTimeout(function() {
+                    $header.animate({
+                        top: 0
+                        }, 1000, "easeOutExpo", 
+                        function() {
+                            showHeader = false;
+                            animate = true;
+                        }
+                    );
+                }, 500);
+            }
+        } else if((showHeader === false) && animate) {
+            var height = $header.height();
+            height = (height + 10) * -1;
+            animate = false;
+            $header.animate({
+                top: height
+                }, 1000, "easeInExpo", 
+                function() {
+                    $("html, body").css({overflow: "visible"});
+                    $(document).scrollTop(1);
+                    showHeader = true;
+                    timeout = true;
+                }
+            );
+        }
+    });
+}
+
 var Nav = function() {
 	this.toggleHamburger = nav.toggleHamburger();
+	this.showNav = nav.showNav();
 }
 
 var nav = {
 	toggleHamburger: toggleHamburger,
-	toggleMenu: toggleMenu
+	toggleMenu: toggleMenu,
+	showNav: showNav
 }
 
 function toggleHamburger() {
@@ -118,4 +167,17 @@ function toggleMenu() {
 		$menu.toggleClass('open');
 	}
 }
+
+function showNav() {
+	
+}
+
+
+
+
+
+
+
+
+
 //# sourceMappingURL=app.js.map

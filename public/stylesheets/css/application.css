@@ -46,6 +46,19 @@ header {
           border-left: 2px solid white;
           text-align: left;
           padding-left: 30px; }
+  @media screen and (max-width: 416px) {
+    header div#header-content h1 {
+      font-size: 24px; }
+    header div#header-content div#sub-header {
+      width: 100%;
+      font-size: 16px; }
+      header div#header-content div#sub-header span:nth-child(1) {
+        padding-right: 15px; }
+      header div#header-content div#sub-header span:nth-child(3) {
+        padding-left: 15px; } }
+  @media screen and (max-width: 320px) {
+    header div#header-content div#sub-header {
+      font-size: 14px; } }
 
 nav#main-nav {
   height: 70px;

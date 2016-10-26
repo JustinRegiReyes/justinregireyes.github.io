@@ -52,4 +52,30 @@ header {
 			}
 		}
 	} //div#header-content
-}
+	@media screen and (max-width: $break-iphone6plus) {
+		div#header-content {
+			h1 {
+				font-size: 24px;
+			}
+			div#sub-header {
+				width: 100%;
+				font-size: 16px;
+				span {
+					&:nth-child(1) {
+						padding-right: 15px;
+					}
+					&:nth-child(3) {
+						padding-left: 15px;
+					}
+				}
+			}
+		} //div#header-content
+	} //header max-width: $break-iphone6plus
+	@media screen and (max-width: $break-iphone4) {
+		div#header-content {
+			div#sub-header {
+				font-size: 14px;
+			}
+		} //div#header-content
+	} //header max-width: $break-iphone4
+} //header

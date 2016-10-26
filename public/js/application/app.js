@@ -100,11 +100,12 @@ function headerListener() {
     var currentScroll = 0;
     var showHeader = false;
     var timeout = true;
-    var animate = true;
+    var hideHeader = true;
     // var startchange = $('#startchange');
     // var offset = startchange.offset();
-    $(document).on('DOMMouseScroll mousewheel', function() {
+    $(document).bind('DOMMouseScroll mousewheel', function(e) {
         currentScroll = $(this).scrollTop();
+        var delta = (e.originalEvent.wheelDelta || -e.originalEvent.detail);
         if((currentScroll == top) && showHeader ) {
             if(timeout === true) {
                 timeout = false;
@@ -115,15 +116,15 @@ function headerListener() {
                         }, 1000, "easeOutExpo", 
                         function() {
                             showHeader = false;
-                            animate = true;
+                            hideHeader = true;
                         }
                     );
                 }, 500);
             }
-        } else if((showHeader === false) && animate) {
+        } else if((delta < -1) && (showHeader === false) && hideHeader) {
             var height = $header.height();
             height = (height + 10) * -1;
-            animate = false;
+            hideHeader = false;
             $header.animate({
                 top: height
                 }, 1000, "easeInExpo", 

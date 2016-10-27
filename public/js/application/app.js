@@ -58,10 +58,14 @@ $(function() {
     "use strict"; // Start of use strict
     console.log('reload');
 
-    // nav.js
-    var nav = new Nav();
-    // Scroll listener
-    var header = new Header();
+    var Page = function() {
+        // nav.js
+        this.nav = new Nav(this);
+        // header.js
+        this.header = new Header(this);
+    }
+
+    var page = new Page();
 
     // jQuery for page scrolling feature - requires jQuery Easing plugin
     $('a.page-scroll').bind('click', function(event) {
@@ -92,30 +96,31 @@ $(function() {
 
 
 });
-var Nav = function() {
-	this.toggleHamburger = nav.toggleHamburger();
-	this.showNav = nav.showNav();
-}
+var Nav = function(Page) {
+	this.Page = Page;
+	this.toggleHamburger = toggleHamburger;
+	this.toggleMenu = toggleMenu;
+	this.showHamburger = showHamburger;
+	this.hideHamburger = hideHamburger;
+	this.showNav = showNav;
+	this.hideNav = hideNav;
 
-var nav = {
-	toggleHamburger: toggleHamburger,
-	toggleMenu: toggleMenu,
-	showNav: showNav
+	this.toggleHamburger();
 }
 
 function toggleHamburger() {
-	var thisNav = this;
+	var _nav = this;
 	var $hamburger = $("div#hamburger");
 	if($hamburger.length) {
 		$hamburger.click(function() {
 			$(this).toggleClass('open');
-			thisNav.toggleMenu();
+			_nav.toggleMenu();
 		})
 	}
 }
 
 function toggleMenu() {
-	var thisNav = this;
+	var _nav = this;
 	var $menu = $("div#menu");
 	if($menu.length) {
 		$menu.toggleClass('open');
@@ -123,7 +128,50 @@ function toggleMenu() {
 }
 
 function showNav() {
-	
+	var _nav = this;
+	var $nav = $("nav#main-nav");
+	$nav.animate({
+		top: 0
+		}, 500, "easeOutExpo",
+		function() {
+			_nav.showHamburger();
+		}
+	);
+}
+
+function hideNav() {
+	var $nav = $("nav#main-nav");
+	var _nav = this;
+	$nav.css({top: "-70px"});
+	_nav.hideHamburger();
+}
+
+function showHamburger() {
+	var $hamburgerWrap = $("div#hamburger-wrapper");
+	var $span1 = $("div#hamburger span:nth-child(1)");
+	var $span4 = $("div#hamburger span:nth-child(4)");
+	$span1.animate({
+		top: 0
+		}, 500, "easeOutExpo", 
+		function() {
+			console.log('animated');
+		}
+	);
+	$span4.animate({
+		top: 23
+		}, 500, "easeOutExpo", 
+		function() {
+			console.log('animated');
+		}
+	);
+}
+
+function hideHamburger() {
+	var $hamburgerWrap = $("div#hamburger-wrapper");
+	var $span1 = $("div#hamburger span:nth-child(1)");
+	var $span4 = $("div#hamburger span:nth-child(4)");
+	$span1.css({top: "12px"});
+	$span4.css({top: "12px"});
 }
 
 
@@ -134,18 +182,18 @@ function showNav() {
 
 
 
-var Header = function() {
-	this.listener = header.listener();
+var Header = function(Page) {
+	this.Page = Page;
+	this.listener = listener;
+	this.showHeader = false;
+	this.timeout = true;
+	this.hideHeader = true;
+	this.animHideHeader = animHideHeader;
+	this.animShowHeader = animShowHeader;
+
+	this.listener();
 }
 
-var header = {
-	showHeader: false,
-	timeout: true,
-	hideHeader: true,
-	listener: listener,
-	animShowHeader: animShowHeader,
-	animHideHeader: animHideHeader
-}
 
 function listener() {
 	var _header = this;
@@ -176,6 +224,7 @@ function animShowHeader($header) {
             function() {
                 _header.showHeader = false;
                 _header.hideHeader = true;
+                _header.Page.nav.hideNav();
             }
         );
     }, 500);
@@ -194,9 +243,8 @@ function animHideHeader($header) {
             $(document).scrollTop(1);
             _header.showHeader = true;
             _header.timeout = true;
+            _header.Page.nav.showNav();
         }
     );
 }
-
-
 //# sourceMappingURL=app.js.map

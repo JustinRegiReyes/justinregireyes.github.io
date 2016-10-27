@@ -3,10 +3,14 @@ $(function() {
     "use strict"; // Start of use strict
     console.log('reload');
 
-    // nav.js
-    var nav = new Nav();
-    // Scroll listener
-    var header = new Header();
+    var Page = function() {
+        // nav.js
+        this.nav = new Nav(this);
+        // header.js
+        this.header = new Header(this);
+    }
+
+    var page = new Page();
 
     // jQuery for page scrolling feature - requires jQuery Easing plugin
     $('a.page-scroll').bind('click', function(event) {

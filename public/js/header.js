@@ -1,15 +1,15 @@
-var Header = function() {
-	this.listener = header.listener();
+var Header = function(Page) {
+	this.Page = Page;
+	this.listener = listener;
+	this.showHeader = false;
+	this.timeout = true;
+	this.hideHeader = true;
+	this.animHideHeader = animHideHeader;
+	this.animShowHeader = animShowHeader;
+
+	this.listener();
 }
 
-var header = {
-	showHeader: false,
-	timeout: true,
-	hideHeader: true,
-	listener: listener,
-	animShowHeader: animShowHeader,
-	animHideHeader: animHideHeader
-}
 
 function listener() {
 	var _header = this;
@@ -40,6 +40,7 @@ function animShowHeader($header) {
             function() {
                 _header.showHeader = false;
                 _header.hideHeader = true;
+                _header.Page.nav.hideNav();
             }
         );
     }, 500);
@@ -58,7 +59,7 @@ function animHideHeader($header) {
             $(document).scrollTop(1);
             _header.showHeader = true;
             _header.timeout = true;
+            _header.Page.nav.showNav();
         }
     );
 }
-

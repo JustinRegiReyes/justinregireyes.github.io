@@ -13,12 +13,14 @@ var gulp = require("gulp"),
 
 gulp.task("concatScripts", function() {
 	return gulp.src([
-		'public/js/jquery.js',
-		'public/js/bootstrap.min.js',
-		"public/js/jquery.easing.min.js",
-		'public/js/index.js',
+		'public/js/plugins/jquery.js',
+		'public/js/plugins/bootstrap.min.js',
+		"public/js/plugins/jquery.easing.min.js",
+		"public/js/plugins/jquery.inview.js",
 		"public/js/nav.js",
-		"public/js/header.js"
+		"public/js/header.js",
+		"public/js/section.js",
+		'public/js/index.js'
 		])
 	.pipe(maps.init())
 	.pipe(concat("app.js"))

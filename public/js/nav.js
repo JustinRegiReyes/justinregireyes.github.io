@@ -50,20 +50,22 @@ function hideNav() {
 
 function showHamburger() {
 	var $hamburgerWrap = $("div#hamburger-wrapper");
+	var _nav = this;
 	var $span1 = $("div#hamburger span:nth-child(1)");
 	var $span4 = $("div#hamburger span:nth-child(4)");
 	$span1.animate({
 		top: 0
 		}, 500, "easeOutExpo", 
 		function() {
-			console.log('animated');
+			// animation complete
 		}
 	);
 	$span4.animate({
 		top: 23
 		}, 500, "easeOutExpo", 
 		function() {
-			console.log('animated');
+			// animation complete
+			_nav.Page.section.showAboutSection();
 		}
 	);
 }

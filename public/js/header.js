@@ -41,6 +41,7 @@ function animShowHeader($header) {
                 _header.showHeader = false;
                 _header.hideHeader = true;
                 _header.Page.nav.hideNav();
+                _header.Page.section.hideAboutSection();
             }
         );
     }, 500);

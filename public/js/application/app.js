@@ -53,49 +53,149 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
  *
 */
 jQuery.easing.jswing=jQuery.easing.swing;jQuery.extend(jQuery.easing,{def:"easeOutQuad",swing:function(e,f,a,h,g){return jQuery.easing[jQuery.easing.def](e,f,a,h,g)},easeInQuad:function(e,f,a,h,g){return h*(f/=g)*f+a},easeOutQuad:function(e,f,a,h,g){return -h*(f/=g)*(f-2)+a},easeInOutQuad:function(e,f,a,h,g){if((f/=g/2)<1){return h/2*f*f+a}return -h/2*((--f)*(f-2)-1)+a},easeInCubic:function(e,f,a,h,g){return h*(f/=g)*f*f+a},easeOutCubic:function(e,f,a,h,g){return h*((f=f/g-1)*f*f+1)+a},easeInOutCubic:function(e,f,a,h,g){if((f/=g/2)<1){return h/2*f*f*f+a}return h/2*((f-=2)*f*f+2)+a},easeInQuart:function(e,f,a,h,g){return h*(f/=g)*f*f*f+a},easeOutQuart:function(e,f,a,h,g){return -h*((f=f/g-1)*f*f*f-1)+a},easeInOutQuart:function(e,f,a,h,g){if((f/=g/2)<1){return h/2*f*f*f*f+a}return -h/2*((f-=2)*f*f*f-2)+a},easeInQuint:function(e,f,a,h,g){return h*(f/=g)*f*f*f*f+a},easeOutQuint:function(e,f,a,h,g){return h*((f=f/g-1)*f*f*f*f+1)+a},easeInOutQuint:function(e,f,a,h,g){if((f/=g/2)<1){return h/2*f*f*f*f*f+a}return h/2*((f-=2)*f*f*f*f+2)+a},easeInSine:function(e,f,a,h,g){return -h*Math.cos(f/g*(Math.PI/2))+h+a},easeOutSine:function(e,f,a,h,g){return h*Math.sin(f/g*(Math.PI/2))+a},easeInOutSine:function(e,f,a,h,g){return -h/2*(Math.cos(Math.PI*f/g)-1)+a},easeInExpo:function(e,f,a,h,g){return(f==0)?a:h*Math.pow(2,10*(f/g-1))+a},easeOutExpo:function(e,f,a,h,g){return(f==g)?a+h:h*(-Math.pow(2,-10*f/g)+1)+a},easeInOutExpo:function(e,f,a,h,g){if(f==0){return a}if(f==g){return a+h}if((f/=g/2)<1){return h/2*Math.pow(2,10*(f-1))+a}return h/2*(-Math.pow(2,-10*--f)+2)+a},easeInCirc:function(e,f,a,h,g){return -h*(Math.sqrt(1-(f/=g)*f)-1)+a},easeOutCirc:function(e,f,a,h,g){return h*Math.sqrt(1-(f=f/g-1)*f)+a},easeInOutCirc:function(e,f,a,h,g){if((f/=g/2)<1){return -h/2*(Math.sqrt(1-f*f)-1)+a}return h/2*(Math.sqrt(1-(f-=2)*f)+1)+a},easeInElastic:function(f,h,e,l,k){var i=1.70158;var j=0;var g=l;if(h==0){return e}if((h/=k)==1){return e+l}if(!j){j=k*0.3}if(g<Math.abs(l)){g=l;var i=j/4}else{var i=j/(2*Math.PI)*Math.asin(l/g)}return -(g*Math.pow(2,10*(h-=1))*Math.sin((h*k-i)*(2*Math.PI)/j))+e},easeOutElastic:function(f,h,e,l,k){var i=1.70158;var j=0;var g=l;if(h==0){return e}if((h/=k)==1){return e+l}if(!j){j=k*0.3}if(g<Math.abs(l)){g=l;var i=j/4}else{var i=j/(2*Math.PI)*Math.asin(l/g)}return g*Math.pow(2,-10*h)*Math.sin((h*k-i)*(2*Math.PI)/j)+l+e},easeInOutElastic:function(f,h,e,l,k){var i=1.70158;var j=0;var g=l;if(h==0){return e}if((h/=k/2)==2){return e+l}if(!j){j=k*(0.3*1.5)}if(g<Math.abs(l)){g=l;var i=j/4}else{var i=j/(2*Math.PI)*Math.asin(l/g)}if(h<1){return -0.5*(g*Math.pow(2,10*(h-=1))*Math.sin((h*k-i)*(2*Math.PI)/j))+e}return g*Math.pow(2,-10*(h-=1))*Math.sin((h*k-i)*(2*Math.PI)/j)*0.5+l+e},easeInBack:function(e,f,a,i,h,g){if(g==undefined){g=1.70158}return i*(f/=h)*f*((g+1)*f-g)+a},easeOutBack:function(e,f,a,i,h,g){if(g==undefined){g=1.70158}return i*((f=f/h-1)*f*((g+1)*f+g)+1)+a},easeInOutBack:function(e,f,a,i,h,g){if(g==undefined){g=1.70158}if((f/=h/2)<1){return i/2*(f*f*(((g*=(1.525))+1)*f-g))+a}return i/2*((f-=2)*f*(((g*=(1.525))+1)*f+g)+2)+a},easeInBounce:function(e,f,a,h,g){return h-jQuery.easing.easeOutBounce(e,g-f,0,h,g)+a},easeOutBounce:function(e,f,a,h,g){if((f/=g)<(1/2.75)){return h*(7.5625*f*f)+a}else{if(f<(2/2.75)){return h*(7.5625*(f-=(1.5/2.75))*f+0.75)+a}else{if(f<(2.5/2.75)){return h*(7.5625*(f-=(2.25/2.75))*f+0.9375)+a}else{return h*(7.5625*(f-=(2.625/2.75))*f+0.984375)+a}}}},easeInOutBounce:function(e,f,a,h,g){if(f<g/2){return jQuery.easing.easeInBounce(e,f*2,0,h,g)*0.5+a}return jQuery.easing.easeOutBounce(e,f*2-g,0,h,g)*0.5+h*0.5+a}});
+/**
+ * author Christopher Blum
+ *    - based on the idea of Remy Sharp, http://remysharp.com/2009/01/26/element-in-view-event-plugin/
+ *    - forked from http://github.com/zuk/jquery.inview/
+ */
+(function (factory) {
+  if (typeof define == 'function' && define.amd) {
+    // AMD
+    define(['jquery'], factory);
+  } else if (typeof exports === 'object') {
+    // Node, CommonJS
+    module.exports = factory(require('jquery'));
+  } else {
+      // Browser globals
+    factory(jQuery);
+  }
+}(function ($) {
 
-$(function() {
-    "use strict"; // Start of use strict
-    console.log('reload');
+  var inviewObjects = [], viewportSize, viewportOffset,
+      d = document, w = window, documentElement = d.documentElement, timer;
 
-    var Page = function() {
-        // nav.js
-        this.nav = new Nav(this);
-        // header.js
-        this.header = new Header(this);
+  $.event.special.inview = {
+    add: function(data) {
+      inviewObjects.push({ data: data, $element: $(this), element: this });
+      // Use setInterval in order to also make sure this captures elements within
+      // "overflow:scroll" elements or elements that appeared in the dom tree due to
+      // dom manipulation and reflow
+      // old: $(window).scroll(checkInView);
+      //
+      // By the way, iOS (iPad, iPhone, ...) seems to not execute, or at least delays
+      // intervals while the user scrolls. Therefore the inview event might fire a bit late there
+      //
+      // Don't waste cycles with an interval until we get at least one element that
+      // has bound to the inview event.
+      if (!timer && inviewObjects.length) {
+         timer = setInterval(checkInView, 250);
+      }
+    },
+
+    remove: function(data) {
+      for (var i=0; i<inviewObjects.length; i++) {
+        var inviewObject = inviewObjects[i];
+        if (inviewObject.element === this && inviewObject.data.guid === data.guid) {
+          inviewObjects.splice(i, 1);
+          break;
+        }
+      }
+
+      // Clear interval when we no longer have any elements listening
+      if (!inviewObjects.length) {
+         clearInterval(timer);
+         timer = null;
+      }
+    }
+  };
+
+  function getViewportSize() {
+    var mode, domObject, size = { height: w.innerHeight, width: w.innerWidth };
+
+    // if this is correct then return it. iPad has compat Mode, so will
+    // go into check clientHeight/clientWidth (which has the wrong value).
+    if (!size.height) {
+      mode = d.compatMode;
+      if (mode || !$.support.boxModel) { // IE, Gecko
+        domObject = mode === 'CSS1Compat' ?
+          documentElement : // Standards
+          d.body; // Quirks
+        size = {
+          height: domObject.clientHeight,
+          width:  domObject.clientWidth
+        };
+      }
     }
 
-    var page = new Page();
+    return size;
+  }
 
-    // jQuery for page scrolling feature - requires jQuery Easing plugin
-    $('a.page-scroll').bind('click', function(event) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: ($($anchor.attr('href')).offset().top - 50)
-        }, 1250, 'easeInOutExpo');
-        event.preventDefault();
+  function getViewportOffset() {
+    return {
+      top:  w.pageYOffset || documentElement.scrollTop   || d.body.scrollTop,
+      left: w.pageXOffset || documentElement.scrollLeft  || d.body.scrollLeft
+    };
+  }
+
+  function checkInView() {
+    if (!inviewObjects.length) {
+      return;
+    }
+
+    var i = 0, $elements = $.map(inviewObjects, function(inviewObject) {
+      var selector  = inviewObject.data.selector,
+          $element  = inviewObject.$element;
+      return selector ? $element.find(selector) : $element;
     });
 
-    // Highlight the top nav as scrolling occurs
-    $('body').scrollspy({
-        target: '.navbar-fixed-top',
-        offset: 51
-    })
+    viewportSize   = viewportSize   || getViewportSize();
+    viewportOffset = viewportOffset || getViewportOffset();
 
-    // Closes the Responsive Menu on Menu Item Click
-    $('.navbar-collapse ul li a').click(function() {
-        $('.navbar-toggle:visible').click();
-    });
+    for (; i<inviewObjects.length; i++) {
+      // Ignore elements that are not in the DOM tree
+      if (!$.contains(documentElement, $elements[i][0])) {
+        continue;
+      }
 
-    // Offset for Main Navigation
-    $('#mainNav').affix({
-        offset: {
-            top: 100
+      var $element      = $($elements[i]),
+          elementSize   = { height: $element[0].offsetHeight, width: $element[0].offsetWidth },
+          elementOffset = $element.offset(),
+          inView        = $element.data('inview');
+
+      // Don't ask me why because I haven't figured out yet:
+      // viewportOffset and viewportSize are sometimes suddenly null in Firefox 5.
+      // Even though it sounds weird:
+      // It seems that the execution of this function is interferred by the onresize/onscroll event
+      // where viewportOffset and viewportSize are unset
+      if (!viewportOffset || !viewportSize) {
+        return;
+      }
+
+      if (elementOffset.top + elementSize.height > viewportOffset.top &&
+          elementOffset.top < viewportOffset.top + viewportSize.height &&
+          elementOffset.left + elementSize.width > viewportOffset.left &&
+          elementOffset.left < viewportOffset.left + viewportSize.width) {
+        if (!inView) {
+          $element.data('inview', true).trigger('inview', [true]);
         }
+      } else if (inView) {
+        $element.data('inview', false).trigger('inview', [false]);
+      }
+    }
+  }
+
+  $(w).on("scroll resize scrollstop", function() {
+    viewportSize = viewportOffset = null;
+  });
+
+  // IE < 9 scrolls to focused elements without firing the "scroll" event
+  if (!documentElement.addEventListener && documentElement.attachEvent) {
+    documentElement.attachEvent("onfocusin", function() {
+      viewportOffset = null;
     });
+  }
+}));
 
-
-});
 var Nav = function(Page) {
 	this.Page = Page;
 	this.toggleHamburger = toggleHamburger;
@@ -148,20 +248,22 @@ function hideNav() {
 
 function showHamburger() {
 	var $hamburgerWrap = $("div#hamburger-wrapper");
+	var _nav = this;
 	var $span1 = $("div#hamburger span:nth-child(1)");
 	var $span4 = $("div#hamburger span:nth-child(4)");
 	$span1.animate({
 		top: 0
 		}, 500, "easeOutExpo", 
 		function() {
-			console.log('animated');
+			// animation complete
 		}
 	);
 	$span4.animate({
 		top: 23
 		}, 500, "easeOutExpo", 
 		function() {
-			console.log('animated');
+			// animation complete
+			_nav.Page.section.showAboutSection();
 		}
 	);
 }
@@ -225,6 +327,7 @@ function animShowHeader($header) {
                 _header.showHeader = false;
                 _header.hideHeader = true;
                 _header.Page.nav.hideNav();
+                _header.Page.section.hideAboutSection();
             }
         );
     }, 500);
@@ -247,4 +350,122 @@ function animHideHeader($header) {
         }
     );
 }
+var Section = function(Page) {
+	this.Page = Page;
+	this.showAboutSection = showAboutSection;
+	this.hideAboutSection = hideAboutSection;
+	this.animSection = animSection;
+	this.hideSection = hideSection;
+	this.inViewListener = inViewListener;
+	this.animateAbout = false;
+
+	this.inViewListener();
+}
+
+function inViewListener() {
+	var $section = $("section");
+	var _section = this;
+	$section.on('inview', function(event, isVisible) {
+		var $this = $(this);
+		var sectionId = $this.attr('id');
+		if(isVisible) {
+			if(sectionId !== "about" || _section.animateAbout ) {
+				animSection();
+			}
+		}
+	});
+}
+
+function animSection($section) {
+	var _section = this;
+	var $titleWrapper = $section.find('div.title-wrapper');
+	var $hr = $titleWrapper.children('hr');
+	$titleWrapper.animate({
+		opacity: 1,
+		bottom: 0
+		}, 500, "easeOutCubic", function() {
+			animateHr();
+		});
+
+
+	function animateHr() {
+		$hr.animate({
+			width: "70"
+			}, 750, "easeOutCirc", function() {
+				// animation complete
+			}
+		);
+	}
+}
+
+function hideSection($section) {
+	var _section = this;
+	var $titleWrapper = $section.find('div.title-wrapper');
+	var $hr = $titleWrapper.children('hr');
+	$titleWrapper.animate({
+		opacity: 0,
+		bottom: 70
+		}, 500, "easeInCubic", function() {
+			$hr.css({width: 0});
+		}
+	);
+}
+
+function showAboutSection() {
+	var $section = $("section#about");
+	var _section = this;
+	_section.animSection($section);
+}
+
+function hideAboutSection() {
+	var $section = $("section#about");
+	var _section = this;
+	
+	hideSection($section);
+}
+
+$(function() {
+    "use strict"; // Start of use strict
+    console.log('reload');
+
+    var Page = function() {
+        // nav.js
+        this.nav = new Nav(this);
+        // header.js
+        this.header = new Header(this);
+        // section.js
+        this.section = new Section(this);
+    }
+
+    var page = new Page();
+
+    // jQuery for page scrolling feature - requires jQuery Easing plugin
+    $('a.page-scroll').bind('click', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: ($($anchor.attr('href')).offset().top - 50)
+        }, 1250, 'easeInOutExpo');
+        event.preventDefault();
+    });
+
+    // Highlight the top nav as scrolling occurs
+    $('body').scrollspy({
+        target: '.navbar-fixed-top',
+        offset: 51
+    })
+
+    // Closes the Responsive Menu on Menu Item Click
+    $('.navbar-collapse ul li a').click(function() {
+        $('.navbar-toggle:visible').click();
+    });
+
+    // Offset for Main Navigation
+    $('#mainNav').affix({
+        offset: {
+            top: 100
+        }
+    });
+
+
+});
 //# sourceMappingURL=app.js.map

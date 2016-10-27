@@ -8,6 +8,8 @@ $(function() {
         this.nav = new Nav(this);
         // header.js
         this.header = new Header(this);
+        // section.js
+        this.section = new Section(this);
     }
 
     var page = new Page();

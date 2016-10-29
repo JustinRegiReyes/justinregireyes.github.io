@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,500|Roboto+Condensed:300");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,500|Roboto+Condensed:300|Source+Sans+Pro:600");
 html, body {
   height: 100%;
   height: 2000px;
@@ -19,48 +19,96 @@ section {
   section#about {
     display: block;
     min-height: 100vh;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../../../img/pancakes.png");
-    background-size: cover;
     padding-top: 50px; }
-    section#about div.container div.row > div.header {
+    section#about:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../../../img/pancakes.png");
+      background-size: cover;
+      -ms-transform: scaleX(-1);
+      transform: scaleX(-1);
+      -webkit-filter: FlipH;
+      filter: FlipH; }
+    section#about div.header {
       height: 70px;
-      text-align: center; }
-      section#about div.container div.row > div.header div.title-wrapper {
-        display: inline-block;
+      margin-bottom: 25px; }
+      section#about div.header div.title-wrapper {
         height: 100%;
-        margin: 0 auto;
         position: relative;
         bottom: 70px;
         opacity: 0; }
-        section#about div.container div.row > div.header div.title-wrapper hr {
-          display: block;
-          margin: 0;
-          width: 0;
-          border-width: 1px;
-          border-color: #2e4568;
+        section#about div.header div.title-wrapper div.hr-container {
+          height: 100%;
           position: relative;
-          top: 50%;
-          -ms-transform: translateY(-50%);
-          transform: translateY(-50%); }
-          section#about div.container div.row > div.header div.title-wrapper hr.left {
-            float: left; }
-          section#about div.container div.row > div.header div.title-wrapper hr.right {
-            float: right; }
-        section#about div.container div.row > div.header div.title-wrapper h1.section-title {
+          overflow: hidden; }
+          section#about div.header div.title-wrapper div.hr-container hr {
+            display: block;
+            margin: 0;
+            width: 0;
+            border-width: 1px;
+            border-color: #223a5d;
+            position: relative;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%); }
+            section#about div.header div.title-wrapper div.hr-container hr.left {
+              float: left; }
+            section#about div.header div.title-wrapper div.hr-container hr.right {
+              overflow: hidden; }
+        section#about div.header div.title-wrapper h1.section-title {
           display: block;
           float: left;
           font-family: "Raleway", sans-serif;
           margin: 0 20px;
+          font-size: 22px;
           position: relative;
           top: 50%;
           -ms-transform: translateY(-50%);
           transform: translateY(-50%); }
-    section#about div.container div.row > div.img-wrapper {
-      display: none; }
-    section#about div.container div.row > div.info {
-      display: none; }
-    section#about div.container div.row > div.skills {
-      display: none; }
+    section#about div.content {
+      opacity: 0;
+      top: 100px;
+      padding: 0 50px; }
+      section#about div.content div.clear-left {
+        clear: both; }
+      section#about div.content div.img-wrapper {
+        height: 100%; }
+        section#about div.content div.img-wrapper img.headshot {
+          width: 250px;
+          height: 250px;
+          border-radius: 50%; }
+      section#about div.content div.info {
+        padding: 0 40px; }
+        section#about div.content div.info div#i-am-wrapper {
+          height: 40px;
+          margin: 0 0 20px;
+          position: relative;
+          left: -3px; }
+          section#about div.content div.info div#i-am-wrapper h1.i-am-a {
+            font-family: "Source Sans Pro", sans-serif;
+            font-size: 40px;
+            margin-top: 0;
+            position: absolute; }
+            section#about div.content div.info div#i-am-wrapper h1.i-am-a.secondary {
+              opacity: 0;
+              top: -30px; }
+        section#about div.content div.info p {
+          font-size: 18px;
+          font-weight: 300;
+          text-shadow: -1px 1px 0px white; }
+          section#about div.content div.info p strong {
+            font-weight: 500; }
+      section#about div.content div.skills {
+        display: none; }
+  @media screen and (max-width: 1200px) {
+    section#about div.content div.img-wrapper img.headshot {
+      width: 250px;
+      height: 250px; } }
 
 header {
   min-height: 100vh;

@@ -18,62 +18,122 @@ section {
 	position: relative;
 	z-index: 0;
 	&#about {
+		&:before {
+			content: "";
+		    position: absolute;
+		    width: 100%;
+		    height: 100%;
+		    top: 0;
+		    left: 0;
+		    z-index: -1;
+		    background-image: 
+			linear-gradient(rgba(255, 255, 255, .80), rgba(255, 255, 255, .80)), 
+			url("../../../img/pancakes.png");
+			background-size: cover;
+		    transform: scaleX(-1);
+		    filter: FlipH;
+		}
 		display: block;
 		min-height: 100vh;
-		background-image: 
-		linear-gradient(rgba(255, 255, 255, .80), rgba(255, 255, 255, .80)), 
-		url("../../../img/pancakes.png");
-		background-size: cover;
 		padding-top: 50px;
-		div.container {
-			div.row {
-				& > div {
-					&.header {
-						height: 70px;
-						text-align: center;
-						div.title-wrapper {
-							display: inline-block;
-							height: 100%;
-							margin: 0 auto;
-							position: relative;
-							bottom: 70px;
+		div.header {
+			height: 70px;
+			margin-bottom: 25px;
+			div.title-wrapper {
+				height: 100%;
+				position: relative;
+				bottom: 70px;
+				opacity: 0;
+				div.hr-container {
+					height: 100%;
+					position: relative;
+					overflow: hidden;
+					hr {
+						display: block;
+						margin: 0;
+						width: 0;
+						border-width: 1px;
+						border-color: $jeanBlue;
+						@include vertical-align();
+						&.left {
+							float: left;
+						}
+						&.right {
+							overflow: hidden;
+						}
+					} //hr
+				} //div.hr-container
+				h1.section-title {
+					display: block; 
+					float: left;
+					font-family: $raleway;
+					margin: 0 20px;
+					font-size: 22px;
+					@include vertical-align();
+				} //h1.section-title
+			} //div.title-wrapper
+		} //div.header
+		div.content {
+			opacity: 0;
+			top: 100px;
+			padding: 0 50px;
+			div.clear-left {
+				clear: both;
+			}
+			div.img-wrapper {
+				height: 100%;
+				img.headshot {
+					width: 250px;
+					height: 250px;
+					border-radius: 50%;
+				}
+			} //div.img-wrapper
+			div.info {
+				padding: 0 40px;
+				div#i-am-wrapper {
+					height: 40px;
+					margin: 0 0 20px;
+					position: relative;
+					left: -3px;
+					h1.i-am-a {
+						font-family: $sourceSans;
+						font-size: 40px;
+						margin-top: 0;
+						position: absolute;
+						&.secondary {
 							opacity: 0;
-							hr {
-								display: block;
-								margin: 0;
-								width: 0;
-								border-width: 1px;
-								border-color: #2e4568;
-								@include vertical-align();
-								&.left {
-									float: left;
-								}
-								&.right {
-									float: right;
-								}
-							}
-							h1.section-title {
-								display: block; 
-								float: left;
-								font-family: $raleway;
-								margin: 0 20px;
-								@include vertical-align();
-							} //h1.section-title
-						} //div.title-wrapper
+							top: -30px;
+						}
 					}
-					&.img-wrapper {
-						display: none;
-					}
-					&.info {
-						display: none;
-					}
-					&.skills {
-						display: none;
+				} //div#i-am-wrapper
+				p {
+					font-size: 18px;
+			    	font-weight: 300;
+					text-shadow: -1px 1px 0px white;
+					strong {
+						font-weight: 500;
 					}
 				}
-			} //div.row
-		} //div.container
+			}
+			div.skills {
+				display: none;
+			}
+		} //&.content
 	} // &#about
+	@media screen and (max-width: $break-lg) {
+		&#about {
+			div.header {
+			} //div.header
+			div.content {
+				div.img-wrapper {
+					img.headshot {
+						width: 250px;
+						height: 250px;
+					}
+				} //div.img-wrapper
+			} //div.content
+		} //&:about
+	} //section max-width: $break-md
 } // section
 
 header {
@@ -87,7 +147,7 @@ header {
 	// radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
 	// radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
 	background-color: $jeanBlue;
-	background-size:16px 16px;
+	background-size: 16px 16px;
 	position: absolute;
 	z-index: 2;
 	div#header-content {

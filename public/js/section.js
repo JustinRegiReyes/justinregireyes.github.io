@@ -108,11 +108,11 @@ function switchWords(wordTracker, switchCounter, iAmWords, $headerPrimary, $head
 
 	if(wordTracker < iAmWords.length) {
 		var word = iAmWords[wordTracker];
-		wordTracker++;
 	} else {
 		wordTracker = 0;
 		var word = iAmWords[wordTracker];
 	}
+	wordTracker++;
 
 	animWords(switchCounter, $headerPrimary, $headerSecondary, word);
 

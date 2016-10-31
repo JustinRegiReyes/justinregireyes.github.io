@@ -359,6 +359,8 @@ var Section = function(Page) {
 	this.inViewListener = inViewListener;
 	this.animateAbout = false;
 	this.animIAmA = animIAmA;
+	this.IAmATracker = undefined;
+	this.resetIAmA = resetIAmA;
 
 	this.inViewListener();
 }
@@ -430,6 +432,7 @@ function hideSection($section) {
 					opacity: 0,
 					top: "100px"
 				});
+				_section.resetIAmA();
 			};
 		}
 	);
@@ -445,10 +448,11 @@ function hideAboutSection() {
 	var $section = $("section#about");
 	var _section = this;
 	
-	hideSection($section);
+	_section.hideSection($section);
 }
 
 function animIAmA() {
+	var _section = this;
 	var $i_am_a = $("h1.i-am-a");
 	var $headerPrimary = $("h1.i-am-a.primary");
 	var $headerSecondary = $("h1.i-am-a.secondary");
@@ -456,12 +460,24 @@ function animIAmA() {
 	if($i_am_a.length) {
 		var switchCounter = 0;
 		var wordTracker = 0;
-		var iTimer = window.setInterval(function() {
+		_section.IAmATracker = window.setInterval(function() {
 			wordTracker = switchWords(wordTracker, switchCounter, iAmWords, $headerPrimary, $headerSecondary);
 			switchCounter++;
 		}, 4000);
 	}
 };
+
+function resetIAmA() {
+	var _section = this;
+	var $i_am_a = $("h1.i-am-a");
+	var $headerPrimary = $("h1.i-am-a.primary");
+	var $headerSecondary = $("h1.i-am-a.secondary");
+	if($i_am_a.length) {
+		window.clearInterval(_section.IAmATracker);
+		$headerPrimary.text("Full Stack Web Developer");
+		$headerSecondary.text("Teachable");
+	}
+}
 
 function switchWords(wordTracker, switchCounter, iAmWords, $headerPrimary, $headerSecondary) {
 
@@ -482,7 +498,7 @@ function switchWords(wordTracker, switchCounter, iAmWords, $headerPrimary, $head
 function animWords(switchCounter, $headerPrimary, $headerSecondary, word) {
 	if(switchCounter % 2 == 0) {
 		$headerPrimary.animate({
-				top: 30,
+				top: 10,
 				opacity: 0
 			}, 500, "swing", 
 			function() {
@@ -501,7 +517,7 @@ function animWords(switchCounter, $headerPrimary, $headerSecondary, word) {
 		);
 	} else {
 		$headerSecondary.animate({
-				top: 30,
+				top: 10,
 				opacity: 0
 			}, 500, "swing", 
 			function() {

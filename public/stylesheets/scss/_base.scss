@@ -38,7 +38,7 @@ section {
 		padding-top: 50px;
 		div.header {
 			height: 70px;
-			margin-bottom: 25px;
+			margin-bottom: 15px;
 			div.title-wrapper {
 				height: 100%;
 				position: relative;
@@ -116,8 +116,25 @@ section {
 				}
 			}
 			div.skills {
-				display: none;
-			}
+				margin: 10px auto;
+				padding: 0;
+				h2 {
+					font-family: $raleway;
+					font-size: 24px;
+					text-align: center;
+					font-weight: bold;
+				}
+				div.skills-container {
+					border: 1px solid $jeanBlue;
+					div.skill-box {
+						h3.skill-header {
+							font-family: $raleway;
+							font-size: 18px;
+							font-weight: bold;
+						}
+					} //div.skill-box
+				} //div.skills-container
+			} //div.skills
 		} //&.content
 	} // &#about
 	@media screen and (max-width: $break-lg) {

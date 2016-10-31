@@ -415,14 +415,22 @@ function animSection($section) {
 
 function hideSection($section) {
 	var _section = this;
+	var sectionId = $section.attr('id');
 	var $titleWrapper = $section.find('div.title-wrapper');
-	var $hr = $titleWrapper.children('hr');
+	var $hr = $titleWrapper.find('hr');
+	var $about = $section.find('div.content');
 
 	$titleWrapper.animate({
 		opacity: 0,
 		bottom: 70
 		}, 500, "easeInCubic", function() {
-			$hr.css({width: 0});
+			$hr.css({width: "0%"});
+			if(sectionId === "about") {
+				$about.css({
+					opacity: 0,
+					top: "100px"
+				});
+			};
 		}
 	);
 }

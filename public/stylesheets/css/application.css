@@ -34,7 +34,7 @@ section {
       filter: FlipH; }
     section#about div.header {
       height: 70px;
-      margin-bottom: 25px; }
+      margin-bottom: 15px; }
       section#about div.header div.title-wrapper {
         height: 100%;
         position: relative;
@@ -104,7 +104,19 @@ section {
           section#about div.content div.info p strong {
             font-weight: 500; }
       section#about div.content div.skills {
-        display: none; }
+        margin: 10px auto;
+        padding: 0; }
+        section#about div.content div.skills h2 {
+          font-family: "Raleway", sans-serif;
+          font-size: 24px;
+          text-align: center;
+          font-weight: bold; }
+        section#about div.content div.skills div.skills-container {
+          border: 1px solid #223a5d; }
+          section#about div.content div.skills div.skills-container div.skill-box h3.skill-header {
+            font-family: "Raleway", sans-serif;
+            font-size: 18px;
+            font-weight: bold; }
   @media screen and (max-width: 1200px) {
     section#about div.content div.img-wrapper img.headshot {
       width: 250px;

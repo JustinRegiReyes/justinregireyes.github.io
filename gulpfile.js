@@ -17,6 +17,7 @@ gulp.task("concatScripts", function() {
 		'public/js/plugins/bootstrap.min.js',
 		"public/js/plugins/jquery.easing.min.js",
 		"public/js/plugins/jquery.inview.js",
+		"public/js/plugins/isotope.min.js",
 		"public/js/nav.js",
 		"public/js/header.js",
 		"public/js/section.js",

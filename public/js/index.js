@@ -1,3 +1,8 @@
+$(window).on('beforeunload', function(){
+  var $header = $('header');
+  $header.css({top: 0});
+  $(window).scrollTop(0);
+});
 
 $(function() {
     "use strict"; // Start of use strict
@@ -40,6 +45,5 @@ $(function() {
             top: 100
         }
     });
-
 
 });

@@ -15,14 +15,59 @@ html, body {
 section {
   display: none;
   position: relative;
-  z-index: 0; }
+  z-index: 0;
+  padding-top: 50px; }
+  section div.header {
+    height: auto; }
+    section div.header div.title-wrapper {
+      height: 50px;
+      position: relative;
+      bottom: 70px;
+      opacity: 0; }
+      section div.header div.title-wrapper div.hr-container {
+        height: 100%;
+        position: relative;
+        overflow: hidden; }
+        section div.header div.title-wrapper div.hr-container hr {
+          display: block;
+          margin: 0;
+          width: 0;
+          border-width: 1px;
+          border-color: #223a5d;
+          position: relative;
+          top: 50%;
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%); }
+          section div.header div.title-wrapper div.hr-container hr.left {
+            float: left; }
+          section div.header div.title-wrapper div.hr-container hr.right {
+            overflow: hidden; }
+      section div.header div.title-wrapper h1.section-title {
+        display: block;
+        float: left;
+        font-family: "Raleway", sans-serif;
+        margin: 0 20px;
+        font-size: 22px;
+        position: relative;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%); }
+  section div.content {
+    opacity: 0;
+    top: 100px;
+    padding: 0 50px; }
+    section div.content div.info {
+      padding: 0 40px; }
+      section div.content div.info p {
+        font-size: 18px;
+        font-weight: 300; }
   section#about {
+    padding-top: 50px;
     display: block;
-    min-height: 100vh;
-    padding-top: 50px; }
+    min-height: 100vh; }
     section#about:before {
       content: "";
-      position: absolute;
+      position: fixed;
       width: 100%;
       height: 100%;
       top: 0;
@@ -33,94 +78,133 @@ section {
       -ms-transform: scaleX(-1);
       transform: scaleX(-1);
       -webkit-filter: FlipH;
-      filter: FlipH; }
-    section#about div.header {
-      height: 70px;
-      margin-bottom: 20px; }
-      section#about div.header div.title-wrapper {
-        height: 100%;
-        position: relative;
-        bottom: 70px;
-        opacity: 0; }
-        section#about div.header div.title-wrapper div.hr-container {
-          height: 100%;
-          position: relative;
-          overflow: hidden; }
-          section#about div.header div.title-wrapper div.hr-container hr {
-            display: block;
-            margin: 0;
-            width: 0;
-            border-width: 1px;
-            border-color: #223a5d;
-            position: relative;
-            top: 50%;
-            -ms-transform: translateY(-50%);
-            transform: translateY(-50%); }
-            section#about div.header div.title-wrapper div.hr-container hr.left {
-              float: left; }
-            section#about div.header div.title-wrapper div.hr-container hr.right {
-              overflow: hidden; }
-        section#about div.header div.title-wrapper h1.section-title {
-          display: block;
-          float: left;
+      filter: FlipH;
+      z-index: 0; }
+    section#about div.content div.img-wrapper {
+      height: 100%; }
+      section#about div.content div.img-wrapper img.headshot {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%; }
+    section#about div.content div.info div#i-am-wrapper {
+      height: 40px;
+      margin: 0 0 20px;
+      position: relative;
+      left: -3px; }
+      section#about div.content div.info div#i-am-wrapper h1.i-am-a {
+        font-family: "Source Sans Pro", sans-serif;
+        font-size: 40px;
+        margin-top: 0;
+        position: absolute; }
+        section#about div.content div.info div#i-am-wrapper h1.i-am-a.secondary {
+          opacity: 0;
+          top: -30px; }
+    section#about div.content div.info p {
+      text-shadow: -1px 1px 0px white; }
+      section#about div.content div.info p strong {
+        font-weight: 500; }
+    section#about div.content div.skills {
+      margin: 10px auto;
+      padding: 0; }
+      section#about div.content div.skills h2 {
+        font-family: "Raleway", sans-serif;
+        font-size: 24px;
+        text-align: center;
+        font-weight: bold; }
+      section#about div.content div.skills div.skills-container {
+        border: 1px solid #223a5d; }
+        section#about div.content div.skills div.skills-container div.skill-box h3.skill-header {
           font-family: "Raleway", sans-serif;
-          margin: 0 20px;
-          font-size: 22px;
-          position: relative;
-          top: 50%;
-          -ms-transform: translateY(-50%);
-          transform: translateY(-50%); }
-    section#about div.content {
-      opacity: 0;
-      top: 100px;
-      padding: 0 50px; }
-      section#about div.content div.clear-left {
-        clear: both; }
-      section#about div.content div.img-wrapper {
-        height: 100%; }
-        section#about div.content div.img-wrapper img.headshot {
-          width: 250px;
-          height: 250px;
-          border-radius: 50%; }
-      section#about div.content div.info {
-        padding: 0 40px; }
-        section#about div.content div.info div#i-am-wrapper {
-          height: 40px;
-          margin: 0 0 20px;
-          position: relative;
-          left: -3px; }
-          section#about div.content div.info div#i-am-wrapper h1.i-am-a {
-            font-family: "Source Sans Pro", sans-serif;
-            font-size: 40px;
-            margin-top: 0;
-            position: absolute; }
-            section#about div.content div.info div#i-am-wrapper h1.i-am-a.secondary {
-              opacity: 0;
-              top: -30px; }
-        section#about div.content div.info p {
           font-size: 18px;
-          font-weight: 300;
-          text-shadow: -1px 1px 0px white; }
-          section#about div.content div.info p strong {
-            font-weight: 500; }
-      section#about div.content div.skills {
-        margin: 10px auto;
-        padding: 0; }
-        section#about div.content div.skills h2 {
-          font-family: "Raleway", sans-serif;
-          font-size: 24px;
-          text-align: center;
           font-weight: bold; }
-        section#about div.content div.skills div.skills-container {
-          border: 1px solid #223a5d; }
-          section#about div.content div.skills div.skills-container div.skill-box h3.skill-header {
-            font-family: "Raleway", sans-serif;
-            font-size: 18px;
-            font-weight: bold; }
+  section#portfolio {
+    display: block;
+    background-color: white;
+    height: auto;
+    padding-top: 0px; }
+    section#portfolio div.container-fluid {
+      height: auto; }
+      section#portfolio div.container-fluid div.row div.header div.title-wrapper {
+        margin: 20px auto; }
+      section#portfolio div.container-fluid div.row div.content {
+        padding: 0;
+        position: relative; }
+        section#portfolio div.container-fluid div.row div.content div.portfolio-box {
+          height: 325px;
+          margin-bottom: 20px; }
+          section#portfolio div.container-fluid div.row div.content div.portfolio-box div.portfolio-box-content-wrapper {
+            position: relative;
+            width: 325px;
+            height: 100%;
+            margin: 0 auto;
+            border: 1px solid #c8c8c8;
+            cursor: pointer; }
+            section#portfolio div.container-fluid div.row div.content div.portfolio-box div.portfolio-box-content-wrapper img.img-responsive {
+              width: 100%;
+              height: 200px;
+              position: relative; }
+            section#portfolio div.container-fluid div.row div.content div.portfolio-box div.portfolio-box-content-wrapper div.portfolio-box-content {
+              height: 125px;
+              border-top: 1px solid #c8c8c8;
+              padding: 0px;
+              position: relative; }
+              section#portfolio div.container-fluid div.row div.content div.portfolio-box div.portfolio-box-content-wrapper div.portfolio-box-content h1.project-title {
+                font-size: 20px;
+                font-weight: 300;
+                text-align: center; }
+              section#portfolio div.container-fluid div.row div.content div.portfolio-box div.portfolio-box-content-wrapper div.portfolio-box-content p.project-description {
+                text-align: center;
+                font-size: 14px;
+                width: 200px;
+                margin: 0 auto; }
+              section#portfolio div.container-fluid div.row div.content div.portfolio-box div.portfolio-box-content-wrapper div.portfolio-box-content a.read-more {
+                position: absolute;
+                display: block;
+                width: 100%;
+                height: 30px;
+                text-align: right;
+                bottom: -30px;
+                right: 30px;
+                opacity: 0; }
   @media screen and (max-width: 1200px) {
     section#about div.content div.img-wrapper img.headshot {
       width: 250px;
       height: 250px; } }
+  @media screen and (max-width: 416px) {
+    section div.header div.title-wrapper h1.section-title {
+      margin-left: 0; }
+    section div.content {
+      padding: 0 10px; }
+    section#about:before {
+      content: "";
+      position: fixed;
+      background-size: 275%;
+      -ms-transform: scaleX(-1);
+      transform: scaleX(-1);
+      -webkit-filter: FlipH;
+      filter: FlipH; }
+    section#about div.header {
+      height: 50px; }
+    section#about div.content div.img-wrapper img.headshot {
+      width: 175px;
+      height: 175px; }
+    section#about div.content div.info {
+      padding: 0 5px; }
+      section#about div.content div.info div#i-am-wrapper {
+        margin: 25px auto 15px;
+        position: relative; }
+        section#about div.content div.info div#i-am-wrapper h1.i-am-a {
+          margin: 0;
+          font-size: 24px; }
+    section#portfolio div.container-fluid div.row div.header div.container {
+      padding: 0; }
+    section#portfolio div.container-fluid div.row div.content div.portfolio-box {
+      float: none;
+      margin: 40px auto;
+      position: static !important; }
+      section#portfolio div.container-fluid div.row div.content div.portfolio-box div.portfolio-box-content-wrapper div.portfolio-box-content a.read-more {
+        opacity: 1;
+        right: 5px; } }
 
 header {
   min-height: 100vh;
@@ -130,7 +214,7 @@ header {
   background: radial-gradient(#2e4568 10%, transparent 16%) 0 0, radial-gradient(#2e4568 10%, transparent 16%) 8px 8px;
   background-color: #223a5d;
   background-size: 16px 16px;
-  position: absolute;
+  position: fixed;
   z-index: 2; }
   header div#header-content {
     position: relative;

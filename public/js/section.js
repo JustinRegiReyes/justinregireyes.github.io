@@ -9,8 +9,12 @@ var Section = function(Page) {
 	this.animIAmA = animIAmA;
 	this.IAmATracker = undefined;
 	this.resetIAmA = resetIAmA;
+	this.portfolioContentListener = portfolioContentListener;
+	this.portfolioIsotope = portfolioIsotope;
 
 	this.inViewListener();
+	this.portfolioContentListener();
+	this.portfolioIsotope();
 }
 
 function inViewListener() {
@@ -21,7 +25,7 @@ function inViewListener() {
 		var sectionId = $this.attr('id');
 		if(isVisible) {
 			if(sectionId !== "about" || _section.animateAbout ) {
-				animSection();
+				animSection($this);
 			}
 		}
 	});
@@ -183,4 +187,46 @@ function animWords(switchCounter, $headerPrimary, $headerSecondary, word) {
 			}
 		);
 	}
+}
+
+function portfolioContentListener() {
+	var _section = this;
+	var $portfolioBox = $("div.portfolio-box-content-wrapper");
+	if($portfolioBox.length) {
+		$portfolioBox.on('mouseenter', function() {
+			$this = $(this);
+			var $readMore = $this.find('a.read-more');
+			$readMore.animate({
+				right: 5,
+				opacity: 1
+			});
+			$this.animate({
+				bottom: 20
+			}, 500, "easeOutExpo", function() {
+
+			});
+		});
+		$portfolioBox.on('mouseleave', function() {
+			$this = $(this);
+			var $readMore = $this.find('a.read-more');
+			$readMore.animate({
+				right: 30,
+				opacity: 0
+			}, 250, "easeOutExpo", function() {
+			});
+			$this.animate({
+				bottom: 0
+			}, 500, "easeOutBounce", function() {
+
+			});
+		});
+	};
+}
+
+function portfolioIsotope() {
+	var $grid = $("div#portfolio-grid");
+	$grid.isotope({
+		itemSelector: '.portfolio-box',
+		layoutMode: 'fitRows'
+	});
 }

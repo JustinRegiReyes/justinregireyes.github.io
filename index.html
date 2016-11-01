@@ -20,6 +20,7 @@
 
     <!-- My CSS -->
     <link rel="stylesheet" href="public/stylesheets/css/normalize.css" type="text/css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="public/stylesheets/css/prefix-app.css" type="text/css">
 
 </head>
@@ -88,7 +89,7 @@
                     </div>
                         <!-- div.info -->
                     <div class="skills col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <h2>SKILLS</h2> 
+                        <h2>TECHNICAL SKILLS</h2> 
                         <div class="skills-container contain-float">
                             <div class="col-md-1 col-lg-1 text-center">
                                 &nbsp;
@@ -147,45 +148,70 @@
             </div>
                 <!-- div.row -->
         </div>
+            <!-- div.container -->
     </section>
 
     <section id="portfolio">
         <div class="container-fluid">
             <div class="row no-gutter">
-                <div class="col-lg-4 col-sm-6">
-                    <a href="http://sandwich-builds.herokuapp.com" class="portfolio-box">
-                        <img src="img/portfolio/sandwichbuilds.png" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="text-faded">
-                                    <h5>(Solo)</h5>
-                                </div>
-                                <div class="project-title">
-                                    Sandwich Builds
-                                    <hr>
-                                </div>
-                                <div class="project-content">
-                                    A web app for the sandwich craftsman. Submit and view other sandwich recipes and their descriptions. Learn the craft and builds made by other lovers of the sandwich craft.
-                                </div>
-                                <div class="project-content">
-                                    <h4>Technologies Used</h4>
-                                    <span class="technologies">MongoDB, Express.js, Node.js Bootstrap, jQuery</span>
-                                </div>
+                <div class="header col-xs-12 col-md-12 col-md-12 col-lg-12">
+                    <div class="container">
+                        <div class="title-wrapper contain-float">
+                            <h1 class="section-title">PORTFOLIO</h1>
+                            <div class="hr-container">
+                                <hr class="right">
                             </div>
+                                <!-- div.hr-container -->
                         </div>
-                    </a>
+                            <!-- div.title-wrapper -->
+                    </div>     
                 </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <a href="http://assassinsgame.herokuapp.com" class="portfolio-box">
-                        <img src="img/portfolio/assassinsgame.png" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="text-faded">
-                                    <h5>(Solo)</h5>
+                    <!-- div.header -->
+                <div id="portfolio-grid" class="content contain-float col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="col-lg-4 col-md-4 col-sm-6 portfolio-box general-assembly node solo">
+                        <!-- <a href="http://sandwich-builds.herokuapp.com"> -->
+                            <div class="portfolio-box-content-wrapper">
+                                <img src="img/portfolio/sandwichbuilds.png" class="img-responsive" alt="">
+                                <div class="portfolio-box-content">
+                                    <h1 class="project-title">
+                                        Sandwich Builds
+                                    </h1>
+                                    <p class="project-description">
+                                        For the sandwich craftsman
+                                    </p>
+                                    <!-- <div class="text-faded">
+                                        <h5>(Solo)</h5>
+                                    </div>
+                                    <div class="project-content">
+                                        A web app for the sandwich craftsman. Submit and view other sandwich recipes and their descriptions. Learn the craft and builds made by other lovers of the sandwich craft.
+                                    </div>
+                                    <div class="project-content">
+                                        <h4>Technologies Used</h4>
+                                        <span class="technologies">MongoDB, Express.js, Node.js Bootstrap, jQuery</span>
+                                    </div> -->
+                                    <a class="read-more" href="">
+                                    <i class="fa fa-angle-double-right" aria-hidden="true"></i> Read More
+                                </a>
                                 </div>
-                                <div class="project-title">
+                                    <!-- div.portfolio-box-content -->
+                            </div>
+                                <!-- div.portfolio-box-content-wrapper -->
+                        </a>
+                    </div>
+                        <!-- div.portfolio-box -->
+                    <div class="col-lg-4 col-md-4 col-sm-6 portfolio-box general-assembly mean-stack node solo">
+                        <!-- <a href="http://assassinsgame.herokuapp.com"> -->
+                        <div class="portfolio-box-content-wrapper">
+                            <img src="img/portfolio/assassinsgame.png" class="img-responsive" alt="">
+                            <div class="portfolio-box-content">
+                                <h1 class="project-title">
                                     Assassins
+                                </h1>
+                                <p class="project-description">
+                                    Online organization of the larp game "assassins"
+                                </p>
+                                <!-- <div class="text-faded">
+                                    <h5>(Solo)</h5>
                                 </div>
                                 <div class="project-content">
                                     A web app that helps organize, put together, and add interactiveness to the game known as assassins. Admins can create a game that assassins can join with if they know the keycode. Assassins can signup for a game and where they can make posts, view their target, and interact with other assassins.
@@ -193,23 +219,29 @@
                                 <div class="project-content">
                                     <h4>Technologies Used</h4>
                                     <span class="technologies">MongoDB, Express.Js, AngularJS, Node.js, jQuery, Bootstrap,  Faker, BCrypt</span>
-                                </div>
+                                </div> -->
+                                <a class="read-more" href="">
+                                    <i class="fa fa-angle-double-right" aria-hidden="true"></i> Read More
+                                </a>
                             </div>
+                                <!-- div.portfolio-box-content -->
                         </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <a href="http://throw-words.herokuapp.com" class="portfolio-box">
-                        <img src="img/portfolio/throwwords.png" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="text-faded">
-                                    <h5>(Solo)</h5>
-                                </div>
-                                <div class="project-title">
+                            <!-- div.portfolio-box-content-wrapper -->
+                    </div>
+                        <!-- div.portfolio-box -->
+                    <div class="col-lg-4 col-md-4 col-sm-6 portfolio-box node general-assembly solo">
+                        <!-- <a href="http://throw-words.herokuapp.com"> -->
+                        <div class="portfolio-box-content-wrapper">
+                            <img src="img/portfolio/throwwords.png" class="img-responsive" alt="">
+                            <div class="portfolio-box-content">
+                                <h1 class="project-title">
                                     Throw Words
-                                    <hr>
+                                </h1>
+                                <p class="project-description">
+                                    Guess as fast as you can before the clock runs out!
+                                </p>
+                                <!-- <div class="text-faded">
+                                    <h5>(Solo)</h5>
                                 </div>
                                 <div class="project-content">
                                     Two teams battle to try to guess as many words as they can before their team clock runs out! Score points, preserve your clock!
@@ -217,23 +249,29 @@
                                 <div class="project-content">
                                     <h4>Technologies Used</h4>
                                     <span class="technologies">Underscore.js, Express.js, jQuery, Bootstrap</span>
-                                </div>
+                                </div> -->
+                                <a class="read-more" href="">
+                                    <i class="fa fa-angle-double-right" aria-hidden="true"></i> Read More
+                                </a>
                             </div>
+                                <!-- div.portfolio-box-content -->
                         </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <a href="http://codingbootcampreviews.herokuapp.com" class="portfolio-box">
-                        <img src="img/portfolio/codingbootcampreviews.png" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="text-faded">
-                                    <h5>(Group)</h5>
-                                </div>
-                                <div class="project-title">
+                            <!-- div.portfolio-box-content-wrapper -->
+                    </div>
+                        <!-- div.portfolio-box -->
+                    <div class="col-lg-4 col-md-4 col-sm-6 portfolio-box ruby-on-rails general-assembly group">
+                        <!-- <a href="http://codingbootcampreviews.herokuapp.com"> -->
+                        <div class="portfolio-box-content-wrapper">
+                            <img src="img/portfolio/codingbootcampreviews.png" class="img-responsive" alt="">
+                            <div class="portfolio-box-content">
+                                <h1 class="project-title">
                                     Coding Bootcamp Reviews
-                                    <hr>
+                                </h1>
+                                <p class="project-description">
+                                    Review the coding bootcamps in the Bay Area
+                                </p>
+                                <!-- <div class="text-faded">
+                                    <h5>(Group)</h5>
                                 </div>
                                 <div class="project-content">
                                     A web app for those looking for user feedback reviews and information for coding bootcamps in the bay area. Users can click bootcamps available on the site and see the stats and reviews of that bootcamp.
@@ -241,23 +279,29 @@
                                 <div class="project-content">
                                     <h4>Technologies Used</h4>
                                     <span class="technologies">Ruby on Rails, jQuery, Bootstrap, BCrypt, Faker</span>
-                                </div>
+                                </div> -->
+                                <a class="read-more" href="">
+                                    <i class="fa fa-angle-double-right" aria-hidden="true"></i> Read More
+                                </a>
                             </div>
+                                <!-- div.portfolio-box-content -->
                         </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <a href="http://coinrace.herokuapp.com" class="portfolio-box">
-                        <img src="img/portfolio/coinrace.png" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="text-faded">
-                                    <h5>(Solo)</h5>
-                                </div>
-                                <div class="project-title">
+                            <!-- div.portfolio-box-content-wrapper -->
+                    </div>
+                        <!-- div.portfolio-box -->
+                    <div class="col-lg-4 col-md-4 col-sm-6 portfolio-box solo general-assembly node">
+                        <!-- <a href="http://coinrace.herokuapp.com"> -->
+                        <div class="portfolio-box-content-wrapper">
+                            <img src="img/portfolio/coinrace.png" class="img-responsive" alt="">
+                            <div class="portfolio-box-content">
+                                <h1 class="project-title">
                                     CoinRace
-                                    <hr>
+                                </h1>
+                                <p class="project-description">
+                                    Collects coins. Race to the princess!
+                                </p>
+                                <!-- <div class="text-faded">
+                                    <h5>(Solo)</h5>
                                 </div>
                                 <div class="project-content">
                                     Collect 5 coins to bring forth the princess, and beat your rival to her heart! Because of your money!
@@ -265,23 +309,30 @@
                                 <div class="project-content">
                                     <h4>Technologies Used</h4>
                                     <span class="technologies">Underscore.js, Express.js, jQuery, Bootstrap</span>
-                                </div>
+                                </div> -->
+                                <a class="read-more" href="">
+                                    <i class="fa fa-angle-double-right" aria-hidden="true"></i> Read More
+                                </a>
                             </div>
+                                <!-- div.portfolio-box-content -->
                         </div>
-                    </a>
-                </div>
-                    <!-- div.col-lg-4 -->
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/portfolio/Wanderful.png" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="text-faded">
-                                    <h5>(Group)</h5>
-                                </div>
-                                <div class="project-title">
+                            <!-- div.portfolio-box-content-wrapper -->
+                    </div>
+                        <!-- div.col-lg-4 -->
+
+                    <div class="col-lg-4 col-md-4 col-sm-6 portfolio-box">
+                        <!-- <a href="#"> -->
+                        <div class="portfolio-box-content-wrapper">
+                            <img src="img/portfolio/Wanderful.png" class="img-responsive" alt="">
+                            <div class="portfolio-box-content">
+                                <h1 class="project-title">
                                     Wanderful
-                                    <hr>
+                                </h1>
+                                <p class="project-description">
+                                    Coming Soons!
+                                </p>
+                                <!-- <div class="text-faded">
+                                    <h5>(Group)</h5>
                                 </div>
                                 <div class="project-content">
                                     Coming Soon!
@@ -289,19 +340,24 @@
                                 <div class="project-content">
                                     <h4>Technologies Used</h4>
                                     <span class="technologies">Ruby on Rails, Google Maps Api, BCrypt, jQuery, Bootstrap</span>
-                                </div>
+                                </div> -->
+                                <a class="read-more" href="">
+                                    <i class="fa fa-angle-double-right" aria-hidden="true"></i> Read More
+                                </a>
                             </div>
-                                <!-- div.portfolio-box-caption-content -->
+                                <!-- div.portfolio-box-content -->
                         </div>
-                            <!-- div.portfolio-box-caption -->
-                    </a>
-                        <!-- a.portfolio-box -->
+                            <!-- div.portfolio-box-content-wrapper -->
+                    </div>
+                        <!-- div.portfolio-box -->
                 </div>
-                    <!-- div.col-lg-4 -->
+                    <!-- div.content -->
             </div>
+                <!-- div.row -->
         </div>
+            <!-- div.container -->
     </section> 
-        <!-- section#portfilio -->
+        <!-- section#portfolio -->
 
     <section id="contact">
         <div class="container">

@@ -33,6 +33,7 @@ function listener() {
 function animShowHeader($header) {
 	var _header = this;
 	$("html, body").css({overflow: "hidden"});
+    $header.css({opacity: 1});
     setTimeout(function() {
         $header.animate({
             top: 0
@@ -56,7 +57,10 @@ function animHideHeader($header) {
         top: height
         }, 1000, "easeInExpo", 
         function() {
-            $("html, body").css({overflow: "visible"});
+            setTimeout(function() {
+                $("body").css({overflow: "visible"});
+            }, 3000);
+            $header.css({opacity: 0});
             $(document).scrollTop(1);
             _header.showHeader = true;
             _header.timeout = true;

@@ -375,11 +375,15 @@ var Section = function(Page) {
 	this.resetIAmA = resetIAmA;
 	this.portfolioContentListener = portfolioContentListener;
 	this.portfolioIsotope = portfolioIsotope;
+	this.sendEmailForm = sendEmailForm;
+	this.emailInputListener = emailInputListener;
 
 	this.inViewListener();
 	this.portfolioContentListener();
 	this.portfolioIsotope();
-}
+	this.sendEmailForm();
+	this.emailInputListener();
+};
 
 function inViewListener() {
 	var $section = $("section");
@@ -393,7 +397,7 @@ function inViewListener() {
 			}
 		}
 	});
-}
+};
 
 function animSection($section) {
 	var _section = this;
@@ -429,7 +433,7 @@ function animSection($section) {
 			}
 		);	
 	};
-}
+};
 
 function hideSection($section) {
 	var _section = this;
@@ -449,23 +453,23 @@ function hideSection($section) {
 					top: "100px"
 				});
 				_section.resetIAmA();
-			};
+			}
 		}
 	);
-}
+};
 
 function showAboutSection() {
 	var $section = $("section#about");
 	var _section = this;
 	_section.animSection($section);
-}
+};
 
 function hideAboutSection() {
 	var $section = $("section#about");
 	var _section = this;
 	
 	_section.hideSection($section);
-}
+};
 
 function animIAmA() {
 	var _section = this;
@@ -493,7 +497,7 @@ function resetIAmA() {
 		$headerPrimary.text("Full Stack Web Developer");
 		$headerSecondary.text("Teachable");
 	}
-}
+};
 
 function switchWords(wordTracker, switchCounter, iAmWords, $headerPrimary, $headerSecondary) {
 
@@ -550,42 +554,49 @@ function animWords(switchCounter, $headerPrimary, $headerSecondary, word) {
 				// animation complete
 			}
 		);
-	}
-}
+	};
+};
 
 function portfolioContentListener() {
 	var _section = this;
 	var $portfolioBox = $("div.portfolio-box-content-wrapper");
+	var smallViewport = 767;
 	if($portfolioBox.length) {
 		$portfolioBox.on('mouseenter', function() {
-			$this = $(this);
-			var $readMore = $this.find('a.read-more');
-			$readMore.animate({
-				right: 5,
-				opacity: 1
-			});
-			$this.animate({
-				bottom: 20
-			}, 500, "easeOutExpo", function() {
+			if($(window).width() >= smallViewport) {
+				$this = $(this);
+				$this.toggleClass('shadowed');
+				var $readMore = $this.find('a.read-more');
+				$readMore.animate({
+					right: 5,
+					opacity: 1
+				});
+				$this.animate({
+					bottom: 20
+				}, 500, "easeOutExpo", function() {
 
-			});
+				});
+			}
 		});
 		$portfolioBox.on('mouseleave', function() {
-			$this = $(this);
-			var $readMore = $this.find('a.read-more');
-			$readMore.animate({
-				right: 30,
-				opacity: 0
-			}, 250, "easeOutExpo", function() {
-			});
-			$this.animate({
-				bottom: 0
-			}, 500, "easeOutBounce", function() {
+			if($(window).width() >= smallViewport) {
+				$this = $(this);
+				$this.toggleClass('shadowed');
+				var $readMore = $this.find('a.read-more');
+				$readMore.animate({
+					right: 30,
+					opacity: 0
+				}, 250, "easeOutExpo", function() {
+				});
+				$this.animate({
+					bottom: 0
+				}, 500, "easeOutBounce", function() {
 
-			});
+				});
+			}
 		});
 	};
-}
+};
 
 function portfolioIsotope() {
 	var $grid = $("div#portfolio-grid");
@@ -593,6 +604,59 @@ function portfolioIsotope() {
 		itemSelector: '.portfolio-box',
 		layoutMode: 'fitRows'
 	});
+};
+
+function sendEmailForm() {
+	var $emailForm = $("form#email-form");
+	if($emailForm.length) {
+		$emailForm.on("submit", function(e) {
+			e.preventDefault();
+			var $this = $(this);
+			var emailer = {
+				name: $("#emailer-name").val(),
+				"_replyto": $("#emailer-email").val(),
+				message: $("#emailer-message").val()
+			}
+			$.ajax({ 
+				url: "//formspree.io/justin.regi.reyes@gmail.com", 
+				method: "POST", 
+				data: {
+					// name: emailer.name,
+					message: emailer.message
+					// "_replyto": emailer._replyto
+				}, 
+				dataType: "json" 
+			});
+		});
+	};
+};
+
+function emailInputListener() {
+	var $emailForm = $("form#email-form");
+	if($emailForm.length) {
+		var $input = $emailForm.find('input');
+		var $textarea = $emailForm.find('textarea');
+
+		$input.on('focus', function() {
+			var $this = $(this);
+			$this.toggleClass('focused');
+		});
+
+		$textarea.on('focus', function() {
+			var $this = $(this);
+			$this.toggleClass('focused');
+		});
+
+		$input.on('focusout', function() {
+			var $this = $(this);
+			$this.toggleClass('focused');
+		});
+
+		$textarea.on('focusout', function() {
+			var $this = $(this);
+			$this.toggleClass('focused');
+		});
+	}
 }
 
 $(window).on('beforeunload', function(){

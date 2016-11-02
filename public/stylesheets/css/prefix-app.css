@@ -1,7 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,500|Roboto+Condensed:300|Source+Sans+Pro:600");
+@keyframes boxShadow {
+  0% {
+    box-shadow: 0px 2px 3px transparent; }
+  50% {
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.12); }
+  100% {
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25); } }
+
 html, body {
   height: 100%;
-  height: 2000px;
   overflow: hidden; }
 
 .contain-float:after {
@@ -13,7 +20,6 @@ html, body {
   height: 0; }
 
 section {
-  display: none;
   position: relative;
   z-index: 0;
   padding-top: 50px; }
@@ -126,50 +132,143 @@ section {
       height: auto; }
       section#portfolio div.container-fluid div.row div.header div.title-wrapper {
         margin: 20px auto; }
-      section#portfolio div.container-fluid div.row div.content {
+      section#portfolio div.container-fluid div.row div#portfolio-grid {
         padding: 0;
         position: relative; }
-        section#portfolio div.container-fluid div.row div.content div.portfolio-box {
+        section#portfolio div.container-fluid div.row div#portfolio-grid div.portfolio-box {
           height: 325px;
-          margin-bottom: 20px; }
-          section#portfolio div.container-fluid div.row div.content div.portfolio-box div.portfolio-box-content-wrapper {
+          margin-bottom: 30px; }
+          section#portfolio div.container-fluid div.row div#portfolio-grid div.portfolio-box div.portfolio-box-content-wrapper {
             position: relative;
             width: 325px;
             height: 100%;
             margin: 0 auto;
             border: 1px solid #c8c8c8;
             cursor: pointer; }
-            section#portfolio div.container-fluid div.row div.content div.portfolio-box div.portfolio-box-content-wrapper img.img-responsive {
+            section#portfolio div.container-fluid div.row div#portfolio-grid div.portfolio-box div.portfolio-box-content-wrapper.shadowed {
+              animation-name: boxShadow;
+              animation-duration: .25s;
+              animation-iteration-count: 1;
+              animation-timing-function: ease-in-out;
+              animation-fill-mode: forwards; }
+            section#portfolio div.container-fluid div.row div#portfolio-grid div.portfolio-box div.portfolio-box-content-wrapper img.img-responsive {
               width: 100%;
               height: 200px;
               position: relative; }
-            section#portfolio div.container-fluid div.row div.content div.portfolio-box div.portfolio-box-content-wrapper div.portfolio-box-content {
+            section#portfolio div.container-fluid div.row div#portfolio-grid div.portfolio-box div.portfolio-box-content-wrapper div.portfolio-box-content {
               height: 125px;
               border-top: 1px solid #c8c8c8;
               padding: 0px;
               position: relative; }
-              section#portfolio div.container-fluid div.row div.content div.portfolio-box div.portfolio-box-content-wrapper div.portfolio-box-content h1.project-title {
+              section#portfolio div.container-fluid div.row div#portfolio-grid div.portfolio-box div.portfolio-box-content-wrapper div.portfolio-box-content h1.project-title {
                 font-size: 20px;
                 font-weight: 300;
                 text-align: center; }
-              section#portfolio div.container-fluid div.row div.content div.portfolio-box div.portfolio-box-content-wrapper div.portfolio-box-content p.project-description {
+              section#portfolio div.container-fluid div.row div#portfolio-grid div.portfolio-box div.portfolio-box-content-wrapper div.portfolio-box-content p.project-description {
                 text-align: center;
                 font-size: 14px;
                 width: 200px;
                 margin: 0 auto; }
-              section#portfolio div.container-fluid div.row div.content div.portfolio-box div.portfolio-box-content-wrapper div.portfolio-box-content a.read-more {
+              section#portfolio div.container-fluid div.row div#portfolio-grid div.portfolio-box div.portfolio-box-content-wrapper div.portfolio-box-content a.read-more {
                 position: absolute;
                 display: block;
-                width: 100%;
-                height: 30px;
+                width: 290px;
+                height: 40px;
+                padding-top: 10px;
                 text-align: right;
-                bottom: -30px;
+                bottom: -40px;
                 right: 30px;
                 opacity: 0; }
+  section#contact {
+    background-color: #223a5d;
+    min-height: 445px;
+    height: auto;
+    padding: 30px 10px;
+    overflow: hidden; }
+    section#contact div.header div.title-wrapper {
+      color: white; }
+      section#contact div.header div.title-wrapper div.hr-container hr.right {
+        border-color: white; }
+    section#contact div.content {
+      height: auto;
+      color: white;
+      padding: 25px 50px 50px; }
+      section#contact div.content div.contact-header {
+        text-align: center;
+        font-size: 25px;
+        font-family: "Roboto Condensed", sans-serif;
+        font-weight: bold; }
+      section#contact div.content div.contact-info img.headshot {
+        display: block;
+        margin: 20px auto;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%; }
+      section#contact div.content div.contact-info span {
+        font-size: 16px;
+        margin: 5px auto;
+        display: block;
+        width: 275px; }
+        section#contact div.content div.contact-info span i {
+          display: inline-block;
+          width: 20px; }
+          section#contact div.content div.contact-info span i.fa-envelope {
+            font-size: 18px; }
+          section#contact div.content div.contact-info span i.fa-mobile {
+            font-size: 26px;
+            padding-left: 3px;
+            position: relative;
+            top: 2px; }
+          section#contact div.content div.contact-info span i.fa-map-marker {
+            font-size: 20px;
+            padding-left: 3px; }
+      section#contact div.content div.form-wrapper {
+        height: auto; }
+        section#contact div.content div.form-wrapper h1.form-header {
+          text-align: center;
+          font-size: 30px;
+          width: 350px;
+          font-weight: 200;
+          margin: 20px auto; }
+        section#contact div.content div.form-wrapper form#email-form {
+          width: 350px;
+          height: auto;
+          margin: 0 auto;
+          color: black; }
+          section#contact div.content div.form-wrapper form#email-form input, section#contact div.content div.form-wrapper form#email-form textarea {
+            width: 100%;
+            margin: 5px auto;
+            border: 0px solid white;
+            padding: 8px;
+            transition: .10s ease-out; }
+            section#contact div.content div.form-wrapper form#email-form input.focused, section#contact div.content div.form-wrapper form#email-form textarea.focused {
+              border-bottom: 3px solid #ff8902; }
+            section#contact div.content div.form-wrapper form#email-form input:focus, section#contact div.content div.form-wrapper form#email-form textarea:focus {
+              outline: none; }
+            section#contact div.content div.form-wrapper form#email-form input[type=submit], section#contact div.content div.form-wrapper form#email-form textarea[type=submit] {
+              padding: 5px; }
+              section#contact div.content div.form-wrapper form#email-form input[type=submit].focused, section#contact div.content div.form-wrapper form#email-form textarea[type=submit].focused {
+                border: 0px solid white; }
+              section#contact div.content div.form-wrapper form#email-form input[type=submit]:active, section#contact div.content div.form-wrapper form#email-form textarea[type=submit]:active {
+                box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
+          section#contact div.content div.form-wrapper form#email-form textarea {
+            height: 100px; }
   @media screen and (max-width: 1200px) {
     section#about div.content div.img-wrapper img.headshot {
       width: 250px;
       height: 250px; } }
+  @media screen and (max-width: 992px) {
+    section#contact div.content {
+      margin: 20px auto;
+      padding: 0px 50px 10px; }
+      section#contact div.content div.contact-info img.headshot {
+        width: 175px;
+        height: 175px; }
+      section#contact div.content div.contact-info span {
+        font-size: 14px;
+        width: 215px; }
+      section#contact div.content div.form-wrapper {
+        margin: 20px auto; } }
   @media screen and (max-width: 416px) {
     section div.header div.title-wrapper h1.section-title {
       margin-left: 0; }
@@ -198,13 +297,28 @@ section {
           font-size: 24px; }
     section#portfolio div.container-fluid div.row div.header div.container {
       padding: 0; }
-    section#portfolio div.container-fluid div.row div.content div.portfolio-box {
+    section#portfolio div.container-fluid div.row div#portfolio-grid div.portfolio-box {
       float: none;
-      margin: 40px auto;
+      margin-bottom: 60px;
       position: static !important; }
-      section#portfolio div.container-fluid div.row div.content div.portfolio-box div.portfolio-box-content-wrapper div.portfolio-box-content a.read-more {
-        opacity: 1;
-        right: 5px; } }
+      section#portfolio div.container-fluid div.row div#portfolio-grid div.portfolio-box div.portfolio-box-content-wrapper {
+        position: relative; }
+        section#portfolio div.container-fluid div.row div#portfolio-grid div.portfolio-box div.portfolio-box-content-wrapper div.portfolio-box-content a.read-more {
+          opacity: 1;
+          right: 5px; }
+    section#contact div.content {
+      padding: 0 10px; }
+      section#contact div.content div.contact-info img.headshot {
+        width: 125px;
+        height: 125px;
+        margin-top: 0; }
+      section#contact div.content div.form-wrapper h1.form-header {
+        width: 100%; }
+      section#contact div.content div.form-wrapper form#email-form {
+        width: 100%; }
+        section#contact div.content div.form-wrapper form#email-form input[type=submit] {
+          font-size: 14px;
+          padding: 10px; } }
 
 header {
   min-height: 100vh;

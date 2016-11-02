@@ -61,7 +61,7 @@
     <section id="about">
         <div class="container">
             <div class="row">
-                <div class="header col-xs-12 col-md-12 col-md-12 col-lg-12">
+                <div class="header col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="title-wrapper contain-float">
                         <h1 class="section-title">ABOUT ME</h1>
                         <div class="hr-container">
@@ -154,7 +154,7 @@
     <section id="portfolio">
         <div class="container-fluid">
             <div class="row no-gutter">
-                <div class="header col-xs-12 col-md-12 col-md-12 col-lg-12">
+                <div class="header col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="container">
                         <div class="title-wrapper contain-float">
                             <h1 class="section-title">PORTFOLIO</h1>
@@ -362,28 +362,41 @@
     <section id="contact">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Contact Me</h2>
-                    <hr class="primary">
+                <div class="header col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="title-wrapper contain-float">
+                        <h1 class="section-title">CONTACT</h1>
+                        <div class="hr-container">
+                            <hr class="right">
+                        </div>
+                            <!-- div.hr-container -->
+                    </div>
+                        <!-- div.title-wrapper -->
                 </div>
-                <div id="business" class="text-center col-md-12 col-lg-12">
-                    <div class="col-md-6 col-lg-6">
-                       
+                    <!-- div.header -->
+                <div class="content contain-float col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="contact-info col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <img src="./img/headshot2.png" class="headshot">
+                        <span id="email"><i class="fa fa-envelope" aria-hidden="true"></i> Justin.Regi.Reyes@gmail.com</span>
+                        <span id="phone"><i class="fa fa-mobile" aria-hidden="true"></i> (707) 246-4541</span>
+                        <span id="place"><i class="fa fa-map-marker" aria-hidden="true"></i> San Francisco, Bay Area</span>
                     </div>
-
-                    <div class="col-md-6 col-lg-6">
-                       
+                        <!-- div.contact-info -->
+                    <div class="form-wrapper col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <h1 class="form-header">Send me an email!</h1>
+                        <form id="email-form" action="http://formspree.io/justin.regi.reyes@gmail.com"
+                              method="POST">
+                            <input type="text" id="emailer-name" placeholder="Your Name" name="name">
+                            <input type="email" id="emailer-email" placeholder="Your Email" name="_replyto">
+                            <textarea name="message" id="emailer-message" placeholder="Hello Justin. What is your availability for the following week? Lets set up a phone interview!"></textarea>
+                            <input type="hidden" name="_subject" value="Personal Website Email Form" />
+                            <input type="text" name="_gotcha" style="display:none" />
+                            <input type="submit" placeholder="" value="Send">
+                        </form>
+                            <!-- form#email-form -->
                     </div>
-
-                    <div class="col-md-6 col-lg-6">
-                       
-                    </div>
-
-                    <div class="col-md-6 col-lg-6">
-                       
-                    </div>
-                </div> 
-                    <!-- div#business -->
+                        <!-- div.form-wrapper -->
+                </div>
+                    <!-- div.content -->
             </div>
                 <!-- div.row -->
         </div>

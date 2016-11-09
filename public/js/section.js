@@ -13,12 +13,15 @@ var Section = function(Page) {
 	this.portfolioIsotope = portfolioIsotope;
 	this.sendEmailForm = sendEmailForm;
 	this.emailInputListener = emailInputListener;
+	this.gridFilterListener = gridFilterListener;
+	this.filterIsotope = filterIsotope;
 
 	this.inViewListener();
 	this.portfolioContentListener();
 	this.portfolioIsotope();
 	this.sendEmailForm();
 	this.emailInputListener();
+	this.gridFilterListener();
 };
 
 function inViewListener() {
@@ -27,6 +30,7 @@ function inViewListener() {
 	$section.on('inview', function(event, isVisible) {
 		var $this = $(this);
 		var sectionId = $this.attr('id');
+		var $titleWrapper = $this.find('div.title-wrapper');
 		if(isVisible) {
 			if(sectionId !== "about" || _section.animateAbout ) {
 				animSection($this);
@@ -80,7 +84,7 @@ function hideSection($section) {
 
 	$titleWrapper.animate({
 		opacity: 0,
-		bottom: 70
+		bottom: 50
 		}, 500, "easeInCubic", function() {
 			$hr.css({width: "0%"});
 			if(sectionId === "about") {
@@ -293,4 +297,57 @@ function emailInputListener() {
 			$this.toggleClass('focused');
 		});
 	}
+}
+
+function gridFilterListener() {
+	var $gridFilter = $('div.grid-filter');
+	var _section = this;
+	if($gridFilter.length) {
+		$gridFilter.on('click', function() {
+			var $this = $(this);
+			var $allFilter = $('div[data-filter=' + "all" + ']');
+			var filter = $this.data('filter');
+			if(filter !== "all") {
+				if($allFilter.hasClass('chosen') === true) {
+					$allFilter.removeClass('chosen')	
+				};
+			}
+			$this.toggleClass('chosen');
+			_section.filterIsotope($this);
+		});
+	}
+}
+
+function filterIsotope($thisElement) {
+	var $grid = $('div#portfolio-grid');
+	var $gridFilter = $('div.grid-filter.chosen');
+	var filterString = "";
+	var filter = $thisElement.data('filter');
+	if(filter === "all") {
+		$gridFilter.each(function() {
+			var $this = $(this);
+			var filter = $this.data('filter');
+			if(filter !== "all") {
+				$this.removeClass('chosen');
+			}
+		});
+	} else {
+		if($gridFilter.length) {
+			$gridFilter.each(function() {
+				var $this = $(this);
+				var filter = $this.data('filter');
+				if(filter !== 'all') {
+					filterString += '.' + filter;
+				}
+			});
+		} else {
+			filterString = "";
+			var $allFilter = $('div[data-filter=' + "all" + ']');
+			if($allFilter.hasClass('chosen') === false) {
+				$allFilter.toggleClass('chosen');
+			}
+		}
+	}
+	
+	$grid.isotope({ filter: filterString });
 }

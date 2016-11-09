@@ -32,7 +32,7 @@ function listener() {
 
 function animShowHeader($header) {
 	var _header = this;
-	$("html, body").css({overflow: "hidden"});
+	$("body").css({overflow: "hidden"});
     $header.css({opacity: 1});
     setTimeout(function() {
         $header.animate({
@@ -59,6 +59,7 @@ function animHideHeader($header) {
         function() {
             setTimeout(function() {
                 $("body").css({overflow: "visible"});
+                $("body").css({height: "auto"});
             }, 3000);
             $header.css({opacity: 0});
             $(document).scrollTop(1);

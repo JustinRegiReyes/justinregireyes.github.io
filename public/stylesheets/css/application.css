@@ -72,7 +72,7 @@ section {
   section#about {
     padding-top: 50px;
     display: block;
-    min-height: 100vh; }
+    min-height: 101vh; }
     section#about:before {
       content: "";
       position: fixed;
@@ -127,11 +127,34 @@ section {
     display: block;
     background-color: white;
     height: auto;
-    padding-top: 0px; }
+    padding-top: 0px;
+    overflow: hidden; }
     section#portfolio div.container-fluid {
       height: auto; }
       section#portfolio div.container-fluid div.row div.header div.title-wrapper {
         margin: 20px auto; }
+      section#portfolio div.container-fluid div.row div#grid-filter-container {
+        height: auto;
+        text-align: center;
+        margin-bottom: 40px; }
+        section#portfolio div.container-fluid div.row div#grid-filter-container div#grid-filter-wrapper {
+          height: 100%;
+          display: inline-block;
+          padding: 0 50px;
+          max-width: 700px; }
+          section#portfolio div.container-fluid div.row div#grid-filter-container div#grid-filter-wrapper div.grid-filter {
+            display: inline-block;
+            height: 37px;
+            color: #ff912f;
+            background-color: white;
+            border: 2px solid #ff912f;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 12px;
+            margin: 10px; }
+            section#portfolio div.container-fluid div.row div#grid-filter-container div#grid-filter-wrapper div.grid-filter.chosen {
+              background-color: #ff912f;
+              color: white; }
       section#portfolio div.container-fluid div.row div#portfolio-grid {
         padding: 0;
         position: relative; }
@@ -242,7 +265,7 @@ section {
             padding: 8px;
             transition: .10s ease-out; }
             section#contact div.content div.form-wrapper form#email-form input.focused, section#contact div.content div.form-wrapper form#email-form textarea.focused {
-              border-bottom: 3px solid #ff8902; }
+              border-bottom: 3px solid #FDB97C; }
             section#contact div.content div.form-wrapper form#email-form input:focus, section#contact div.content div.form-wrapper form#email-form textarea:focus {
               outline: none; }
             section#contact div.content div.form-wrapper form#email-form input[type=submit], section#contact div.content div.form-wrapper form#email-form textarea[type=submit] {

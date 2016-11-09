@@ -268,6 +268,8 @@ function showHamburger() {
 		}, 500, "easeOutExpo", 
 		function() {
 			// animation complete
+			$("body").css({overflow: "visible"});
+            $("body").css({height: "auto"});
 		}
 	);
 	$span4.animate({
@@ -355,10 +357,6 @@ function animHideHeader($header) {
         top: height
         }, 1000, "easeInExpo", 
         function() {
-            setTimeout(function() {
-                $("body").css({overflow: "visible"});
-                $("body").css({height: "auto"});
-            }, 3000);
             $header.css({opacity: 0});
             $(document).scrollTop(1);
             _header.showHeader = true;

@@ -58,6 +58,8 @@ function showHamburger() {
 		}, 500, "easeOutExpo", 
 		function() {
 			// animation complete
+			$("body").css({overflow: "visible"});
+            $("body").css({height: "auto"});
 		}
 	);
 	$span4.animate({

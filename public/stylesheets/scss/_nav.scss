@@ -12,11 +12,11 @@ nav#main-nav {
 		right: 40px;
 		position: absolute;
 		padding-top: 10px;
+		z-index: 1;
 		div#hamburger {
 			width: 35px;
 			height: 30px;
 			position: relative;
-			z-index: 1;
 			margin: 0 auto;
 			-webkit-transform: rotate(0deg);
 			-moz-transform: rotate(0deg);

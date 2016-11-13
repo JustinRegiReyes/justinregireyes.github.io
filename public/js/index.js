@@ -15,6 +15,10 @@ $(function() {
         this.header = new Header(this);
         // section.js
         this.section = new Section(this);
+        this.modalListeners = modalListeners;
+        this.loadImage = loadImage;
+
+        this.modalListeners();
     }
 
     var page = new Page();
@@ -28,22 +32,50 @@ $(function() {
         event.preventDefault();
     });
 
-    // Highlight the top nav as scrolling occurs
-    $('body').scrollspy({
-        target: '.navbar-fixed-top',
-        offset: 51
-    })
+    // modal functions
+        function modalListeners() {
+            var _page = this;
+            $('div.modal').on('shown.bs.modal', function() {
+                var $this = $(this);
+                $("body").css({overflow: "hidden"});
+                $("body").css({height: "100%"});
+                var $loadingIcons = $this.find('i.fa-spin');
+                if($loadingIcons.length) {
+                    _page.loadImage($this);
+                }
+            });
 
-    // Closes the Responsive Menu on Menu Item Click
-    $('.navbar-collapse ul li a').click(function() {
-        $('.navbar-toggle:visible').click();
-    });
-
-    // Offset for Main Navigation
-    $('#mainNav').affix({
-        offset: {
-            top: 100
+            $('div.modal').on('hidden.bs.modal', function() {
+                $("body").css({overflow: "visible"});
+                $("body").css({height: "auto"});
+            });
         }
-    });
+
+        function loadImage($modal) {
+            var $pictureContainers = $modal.find('div.picture-container');
+            $pictureContainers.each(function() {
+                var $container = $(this);
+                var $loadingIcon = $container.find('i.fa-spin');
+                var imgPath = $container.data('imgPath');
+                $('<img src="'+ imgPath +'" class="img-responsive">').load(function() {
+                    var $img = $(this);
+                    $loadingIcon.fadeOut('fast', function() {
+                        appendImg($container, $img);
+                    });
+                });
+            });
+            
+            var $loadingIcons = $modal.find('i-fa-spin');
+            $loadingIcons.remove();
+
+            function appendImg($container, $img) {
+                $container.empty();
+                $img.appendTo($container);
+                setTimeout(function() {
+                  $img.fadeIn();
+                }, 500);
+            }
+        }
+    // modal functions END
 
 });

@@ -101,7 +101,20 @@ function hideSection($section) {
 function showAboutSection() {
 	var $section = $("section#about");
 	var _section = this;
+	var $currentSection = $("span#current-section");
+	var $hamburgerBackground = $("div#hamburger-background");
+
 	_section.animSection($section);
+	$currentSection.animate({
+		opacity: 1
+	}, 500, "swing", function() {
+		// animation complete
+		$hamburgerBackground.animate({
+			opacity: 1
+		}, 500, "swing", function() {
+			// animation complete
+		})
+	})
 };
 
 function hideAboutSection() {

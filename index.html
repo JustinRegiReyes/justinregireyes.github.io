@@ -28,6 +28,9 @@
 <body id="page-top">
     <nav id="main-nav">
         <div id="hamburger-wrapper">
+            <div id="hamburger-background">
+            </div> 
+                <!-- div#hamburger-background -->
             <div id="hamburger">
                 <span></span>
                 <span></span>
@@ -35,19 +38,24 @@
                 <span></span>
             </div>
                 <!-- div#hamburger -->
+             <span id="current-section">
+                About
+            </span>
+                <!-- span#current-section -->
         </div>
             <!-- div#hamburger-wrapper -->
-        <div id="menu">
-            <ul id="options" class="list-unstyled">
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="./JustinReyesResume.pdf">Resume</a></li>
-            </ul>
-                <!-- ul#options -->
-        </div>
-            <!-- div#menu -->
     </nav>
+
+    <div id="menu">
+        <ul id="options" class="list-unstyled">
+            <li data-section-name="About"><a href="#about" class="page-scroll">About</a></li>
+            <li data-section-name="Portfolio"><a href="#portfolio" class="page-scroll">Portfolio</a></li>
+            <li data-section-name="Contact"><a href="#contact" class="page-scroll">Contact</a></li>
+            <li><a href="./JustinReyesResume.pdf" target="_blank">Resume</a></li>
+        </ul>
+            <!-- ul#options -->
+    </div>
+        <!-- div#menu -->
 
     <header>
         <div id="header-img"></div>
@@ -58,7 +66,7 @@
     </header>
     <span id="startchange"></span>
 
-    <section id="about">
+    <section id="about" data-section-name="About">
         <div class="container">
             <div class="row">
                 <div class="header col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -83,8 +91,12 @@
                             <h1 class="i-am-a secondary">Teachable</h1>
                         </div>
                             <!-- div#i-am-wrapper -->
-                        <p>Hello World! I'm Justin, a graduate of General Assembly SF's Full Stack Web Development course. I always had an interest in how websites worked since the MySpace days and their customization. I was a business major in college because I enjoy creating things, problem solving, and seeing ideas come to fruition. The inkling to code grew tremendously in college and I began to research it. This ultimately led up to me joining General Assembly. I instantly felt captivated by web development.
-                        <br><br><strong> Finding ways for people to connect, socialize, and have unique experiences through digital applications and code is my passion.</strong></p>
+                        <p>Hello World! I'm Justin, a graduate of General Assembly SF's Full Stack Web Development course. I always had an interest in how websites worked since the MySpace days and their customization. I was a business major in college because I enjoy creating things, problem solving, and seeing ideas come to fruition. The inkling to code grew tremendously in college and I began to research it. This ultimately led up to me joining General Assembly. I instantly felt captivated by web development. <strong> Finding ways for people to connect, socialize, and have unique experiences through digital applications and code is my passion.</strong></p>
+                        <br>
+
+                        <a href="./JustinReyesResume.pdf" type="button" target="_blank" class="resume">
+                            <button type="button" class="btn">View Resume</button>
+                        </a>
                     </div>
                         <!-- div.info -->
                     <div class="skills col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -150,7 +162,7 @@
             <!-- div.container -->
     </section>
 
-    <section id="portfolio">
+    <section id="portfolio" data-section-name="Portfolio">
         <div class="container-fluid">
             <div class="row no-gutter">
                 <div class="header col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -173,8 +185,8 @@
                                 All
                             </div>
                                 <!-- div.grid-filter -->
-                            <div class="grid-filter" data-filter="general-assembly" data-chosen="false">
-                                General Assembly
+                            <div class="grid-filter" data-filter="live" data-chosen="false">
+                                Live
                             </div>
                                 <!-- div.grid-filter -->
                             <div class="grid-filter" data-filter="ruby-on-rails" data-chosen="false">
@@ -185,16 +197,16 @@
                                 MEAN Stack
                             </div>
                                 <!-- div.grid-filter -->
+                            <div class="grid-filter" data-filter="general-assembly" data-chosen="false">
+                                General Assembly
+                            </div>
+                                <!-- div.grid-filter -->
                             <div class="grid-filter" data-filter="node" data-chosen="false">
                                 Node
                             </div>
                                 <!-- div.grid-filter -->
-                            <div class="grid-filter" data-filter="live" data-chosen="false">
-                                Live
-                            </div>
-                                <!-- div.grid-filter -->
-                            <div class="grid-filter" data-filter="in-progress" data-chosen="false">
-                                In Progress
+                            <div class="grid-filter" data-filter="further-development" data-chosen="false">
+                                Further Development
                             </div>
                                 <!-- div.grid-filter -->
                         </div>
@@ -202,10 +214,29 @@
                     </div> 
                         <!-- div#grid-filter-container -->
                     <div id="portfolio-grid" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <div class="col-lg-4 col-md-4 col-sm-6 portfolio-box">
+                        <div class="col-lg-4 col-md-4 col-sm-6 portfolio-box solo further-development ruby-on-rails live">
+                            <div class="portfolio-box-content-wrapper">
+                                <img src="img/portfolio/thedeets/thedeetshome.png" class="img-responsive" alt="">
+                                <div class="portfolio-box-content">
+                                    <h1 class="project-title">
+                                        The Deets
+                                    </h1>
+                                    <p class="project-description">
+                                        A get-together details solution
+                                    </p>
+                                    <a class="read-more" href="" data-toggle="modal" data-target="#the-deets-modal">
+                                        <i class="fa fa-angle-double-right" aria-hidden="true"></i> Read More
+                                    </a>
+                                </div>
+                                    <!-- div.portfolio-box-content -->
+                            </div>
+                                <!-- div.portfolio-box-content-wrapper -->
+                        </div>
+                            <!-- div.portfolio-box -->
+                        <div class="col-lg-4 col-md-4 col-sm-6 portfolio-box live ruby-on-rails further-development">
                             <!-- <a href="#"> -->
                             <div class="portfolio-box-content-wrapper">
-                                <img src="img/portfolio/Wanderful.png" class="img-responsive" alt="">
+                                <img src="img/portfolio/jkchefcollection/jksearchblurred.png" class="img-responsive" alt="">
                                 <div class="portfolio-box-content">
                                     <h1 class="project-title">
                                         JK Chef Collection
@@ -223,7 +254,7 @@
                                         <h4>Technologies Used</h4>
                                         <span class="technologies">Ruby on Rails, Google Maps Api, BCrypt, jQuery, Bootstrap</span>
                                     </div> -->
-                                    <a class="read-more" href="">
+                                    <a class="read-more" href="" data-toggle="modal" data-target="#chef-collection">
                                         <i class="fa fa-angle-double-right" aria-hidden="true"></i> Read More
                                     </a>
                                 </div>
@@ -232,46 +263,16 @@
                                 <!-- div.portfolio-box-content-wrapper -->
                         </div>
                             <!-- div.portfolio-box -->
-                        <div class="col-lg-4 col-md-4 col-sm-6 portfolio-box">
-                            <!-- <a href="#"> -->
-                            <div class="portfolio-box-content-wrapper">
-                                <img src="img/portfolio/Wanderful.png" class="img-responsive" alt="">
-                                <div class="portfolio-box-content">
-                                    <h1 class="project-title">
-                                        The Deets
-                                    </h1>
-                                    <p class="project-description">
-                                        A get-together details solution
-                                    </p>
-                                    <!-- <div class="text-faded">
-                                        <h5>(Group)</h5>
-                                    </div>
-                                    <div class="project-content">
-                                        Coming Soon!
-                                    </div>
-                                    <div class="project-content">
-                                        <h4>Technologies Used</h4>
-                                        <span class="technologies">Ruby on Rails, Google Maps Api, BCrypt, jQuery, Bootstrap</span>
-                                    </div> -->
-                                    <a class="read-more" href="" data-toggle="modal" data-target="#the-deets-modal">
-                                        <i class="fa fa-angle-double-right" aria-hidden="true"></i> Read More
-                                    </a>
-                                </div>
-                                    <!-- div.portfolio-box-content -->
-                            </div>
-                                <!-- div.portfolio-box-content-wrapper -->
-                        </div>
-                            <!-- div.portfolio-box -->
-                        <div class="col-lg-4 col-md-4 col-sm-6 portfolio-box general-assembly node solo">
+                        <div class="col-lg-4 col-md-4 col-sm-6 portfolio-box general-assembly mean-stack node further-development">
                             <!-- <a href="http://sandwich-builds.herokuapp.com"> -->
                             <div class="portfolio-box-content-wrapper">
-                                <img src="img/portfolio/sandwichbuilds.png" class="img-responsive" alt="">
+                                <img src="img/portfolio/eventwall/walloverview.png" class="img-responsive" alt="">
                                 <div class="portfolio-box-content">
                                     <h1 class="project-title">
-                                        Sandwich Builds
+                                        Event Wall
                                     </h1>
                                     <p class="project-description">
-                                        For the sandwich craftsman
+                                        Twitter/media wall to keep your guests engaged
                                     </p>
                                     <!-- <div class="text-faded">
                                         <h5>(Solo)</h5>
@@ -283,16 +284,16 @@
                                         <h4>Technologies Used</h4>
                                         <span class="technologies">MongoDB, Express.js, Node.js Bootstrap, jQuery</span>
                                     </div> -->
-                                    <a class="read-more" href="">
-                                    <i class="fa fa-angle-double-right" aria-hidden="true"></i> Read More
-                                </a>
+                                    <a class="read-more" href="" data-toggle="modal" data-target="#event-wall">
+                                        <i class="fa fa-angle-double-right" aria-hidden="true"></i> Read More
+                                    </a>
                                 </div>
                                     <!-- div.portfolio-box-content -->
                             </div>
                                 <!-- div.portfolio-box-content-wrapper -->
                         </div>
                             <!-- div.portfolio-box -->
-                        <div class="col-lg-4 col-md-4 col-sm-6 portfolio-box general-assembly mean-stack node solo">
+                        <div class="col-lg-4 col-md-4 col-sm-6 portfolio-box general-assembly mean-stack node further-development live">
                             <!-- <a href="http://assassinsgame.herokuapp.com"> -->
                             <div class="portfolio-box-content-wrapper">
                                 <img src="img/portfolio/assassinsgame.png" class="img-responsive" alt="">
@@ -313,7 +314,7 @@
                                         <h4>Technologies Used</h4>
                                         <span class="technologies">MongoDB, Express.Js, AngularJS, Node.js, jQuery, Bootstrap,  Faker, BCrypt</span>
                                     </div> -->
-                                    <a class="read-more" href="">
+                                    <a class="read-more" href="" data-toggle="modal" data-target="#assassins-game">
                                         <i class="fa fa-angle-double-right" aria-hidden="true"></i> Read More
                                     </a>
                                 </div>
@@ -322,7 +323,37 @@
                                 <!-- div.portfolio-box-content-wrapper -->
                         </div>
                             <!-- div.portfolio-box -->
-                        <div class="col-lg-4 col-md-4 col-sm-6 portfolio-box node general-assembly solo">
+                        <div class="col-lg-4 col-md-4 col-sm-6 portfolio-box general-assembly node live">
+                            <!-- <a href="http://sandwich-builds.herokuapp.com"> -->
+                            <div class="portfolio-box-content-wrapper">
+                                <img src="img/portfolio/sandwichbuilds.png" class="img-responsive" alt="">
+                                <div class="portfolio-box-content">
+                                    <h1 class="project-title">
+                                        Sandwich Builds
+                                    </h1>
+                                    <p class="project-description">
+                                        For the sandwich craftsman
+                                    </p>
+                                    <!-- <div class="text-faded">
+                                        <h5>(Solo)</h5>
+                                    </div>
+                                    <div class="project-content">
+                                        A web app for the sandwich craftsman. Submit and view other sandwich recipes and their descriptions. Learn the craft and builds made by other lovers of the sandwich craft.
+                                    </div>
+                                    <div class="project-content">
+                                        <h4>Technologies Used</h4>
+                                        <span class="technologies">MongoDB, Express.js, Node.js Bootstrap, jQuery</span>
+                                    </div> -->
+                                    <a class="read-more" href="" data-toggle="modal" data-target="#sandwich-builds">
+                                        <i class="fa fa-angle-double-right" aria-hidden="true"></i> Read More
+                                    </a>
+                                </div>
+                                    <!-- div.portfolio-box-content -->
+                            </div>
+                                <!-- div.portfolio-box-content-wrapper -->
+                        </div>
+                            <!-- div.portfolio-box -->
+                        <div class="col-lg-4 col-md-4 col-sm-6 portfolio-box node general-assembly further-development live">
                             <!-- <a href="http://throw-words.herokuapp.com"> -->
                             <div class="portfolio-box-content-wrapper">
                                 <img src="img/portfolio/throwwords.png" class="img-responsive" alt="">
@@ -343,7 +374,7 @@
                                         <h4>Technologies Used</h4>
                                         <span class="technologies">Underscore.js, Express.js, jQuery, Bootstrap</span>
                                     </div> -->
-                                    <a class="read-more" href="">
+                                    <a class="read-more" href="" data-toggle="modal" data-target="#throw-words">
                                         <i class="fa fa-angle-double-right" aria-hidden="true"></i> Read More
                                     </a>
                                 </div>
@@ -352,7 +383,7 @@
                                 <!-- div.portfolio-box-content-wrapper -->
                         </div>
                             <!-- div.portfolio-box -->
-                        <div class="col-lg-4 col-md-4 col-sm-6 portfolio-box ruby-on-rails general-assembly group">
+                        <div class="col-lg-4 col-md-4 col-sm-6 portfolio-box ruby-on-rails general-assembly">
                             <!-- <a href="http://codingbootcampreviews.herokuapp.com"> -->
                             <div class="portfolio-box-content-wrapper">
                                 <img src="img/portfolio/codingbootcampreviews.png" class="img-responsive" alt="">
@@ -373,7 +404,7 @@
                                         <h4>Technologies Used</h4>
                                         <span class="technologies">Ruby on Rails, jQuery, Bootstrap, BCrypt, Faker</span>
                                     </div> -->
-                                    <a class="read-more" href="">
+                                   <a class="read-more" href="" data-toggle="modal" data-target="#bootcamp-reviews">
                                         <i class="fa fa-angle-double-right" aria-hidden="true"></i> Read More
                                     </a>
                                 </div>
@@ -382,7 +413,26 @@
                                 <!-- div.portfolio-box-content-wrapper -->
                         </div>
                             <!-- div.portfolio-box -->
-                        <div class="col-lg-4 col-md-4 col-sm-6 portfolio-box solo general-assembly node">
+                        <div class="col-lg-4 col-md-4 col-sm-6 portfolio-box node general-assembly live">
+                            <div class="portfolio-box-content-wrapper">
+                                <img src="img/portfolio/quakesearch/zoomedout.png" class="img-responsive" alt="">
+                                <div class="portfolio-box-content">
+                                    <h1 class="project-title">
+                                        SF Quake Search
+                                    </h1>
+                                    <p class="project-description">
+                                        Search for earthquakes w/ SF as the focal point
+                                    </p>
+                                    <a class="read-more" href="" data-toggle="modal" data-target="#quake-search">
+                                        <i class="fa fa-angle-double-right" aria-hidden="true"></i> Read More
+                                    </a>
+                                </div>
+                                    <!-- div.portfolio-box-content -->
+                            </div>
+                                <!-- div.portfolio-box-content-wrapper -->
+                        </div>
+                            <!-- div.portfolio-box -->
+                        <div class="col-lg-4 col-md-4 col-sm-6 portfolio-box solo general-assembly node live">
                             <!-- <a href="http://coinrace.herokuapp.com"> -->
                             <div class="portfolio-box-content-wrapper">
                                 <img src="img/portfolio/coinrace.png" class="img-responsive" alt="">
@@ -403,7 +453,7 @@
                                         <h4>Technologies Used</h4>
                                         <span class="technologies">Underscore.js, Express.js, jQuery, Bootstrap</span>
                                     </div> -->
-                                    <a class="read-more" href="">
+                                    <a class="read-more" href="" data-toggle="modal" data-target="#coin-race">
                                         <i class="fa fa-angle-double-right" aria-hidden="true"></i> Read More
                                     </a>
                                 </div>
@@ -423,7 +473,7 @@
     </section> 
         <!-- section#portfolio -->
 
-    <section id="contact">
+    <section id="contact" data-section-name="Contact">
         <div class="container">
             <div class="row">
                 <div class="header col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -469,123 +519,1103 @@
         <!-- section#contact -->
 
     <!-- portfolio modals -->
-    <div id="the-deets-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <i class="fa fa-times" aria-hidden="true"></i>
-            </button>
-            <h1 class="modal-title">THE DEETS</h1>
-            <hr>
-            <div class="project-tags">
-            </div>
-                <!-- div.project-tags -->
-          </div>
-            <!-- div.modal-header -->
-          <div class="modal-body contain-float">
-            <div class="portfolio-section contain-float row">
-                <div class="picture-container col-xs-12 col-sm-12 col-md-8 col-lg-8" data-img-path="img/portfolio/theDeets/thedeetslanding.png">
-                    <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+        <div id="the-deets-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+                <h1 class="modal-title">The Deets</h1>
+                <hr>
+                <div class="project-tags">
                 </div>
-                    <!-- div.picture-container -->
-                <div class="info-container col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <h4 class="info-title">What is it?</h4>
-                    <div class="info">
-                        Bacon ipsum dolor amet bacon shoulder rump, ground round pork chop flank cupim pork belly venison ribeye tenderloin. Tenderloin andouille leberkas, porchetta tri-tip pancetta landjaeger frankfurter picanha brisket meatloaf tail turducken. Alcatra pork loin swine tenderloin, brisket ball tip pancetta capicola ground round flank filet mignon short ribs sirloin boudin short loin. Pork chop jowl pork, pastrami turkey tail kevin boudin short ribs ham hock. Swine chicken t-bone, venison shankle meatloaf frankfurter andouille tri-tip. Bresaola tail filet mignon corned beef, pork chuck rump chicken ham swine leberkas flank shoulder. Spare ribs jowl swine tenderloin chicken picanha.
+                    <!-- div.project-tags -->
+              </div>
+                <!-- div.modal-header -->
+              <div class="modal-body contain-float">
+                <div class="portfolio-section contain-float row">
+                    <div class="picture-container col-lg-7 col-md-7 col-xs-12 col-sm-12 " data-img-path="img/portfolio/thedeets/thedeetslanding.png">
+                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
                     </div>
-                        <!-- div.info -->
+                        <!-- div.picture-container -->
+                    <div class="info-container col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                        <h4 class="info-title">What is it?</h4>
+                        <div class="info">
+                            The Deets is an online get-together organizer. The Deets keeps the details of an event in one place; like the date, place, guest attendance, theme, and other specific details. <br><br>
+
+                            Wondering what's being brought to the potluck? Not quite sure who's going to bring decorations? Too much noise and fodder on other alternative event organizer websites? The Deets helps you keep event details simple, and easy to find.
+                        </div>
+                            <!-- div.info -->
+                    </div>
+                        <!-- div.info-container -->
                 </div>
-                    <!-- div.info-container -->
-            </div>
-                <!-- portfolio-section -->
-            <div class="portfolio-section contain-float row">
-                <div class="picture-container col-lg-8 col-md-8 col-sm-12 col-xs-12" data-img-path="img/portfolio/theDeets/thedeetsevent.png">
-                    <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                    <!-- portfolio-section -->
+                <div class="portfolio-section contain-float row">
+                    <div class="picture-container col-lg-7 col-md-7 col-sm-12 col-xs-12" data-img-path="img/portfolio/thedeets/thedeetsevent.png">
+                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                    </div>
+                        <!-- div.picture-container -->
+                    <div class="info-container col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                        <h4 class="info-title">How does it work?</h4>
+                        <div class="info">
+                            In order to view, or be invited to any events, a user must create an account or be logged in. Every user has a home page where they can see the events for that month, notifications, and also able to search for events created by friends. <br><br>
+
+                            The Deets protects events from strangers. So to be able to attend or find an event, you must be friends with the owner. The Deets further protects events, even from friends, by having to know a specific search key in order to find the event. <br><br>
+
+                            At the event page users can see the details of said event such as: address, theme, description, attending guests, comments, and categories needed for the event. The Deets helps every event be organized, and enjoyable for everyone involved. <br><br>
+
+                            I created The Deets to organize my friends and I annual "Friendsgiving". So, attending guests can sign up to bring items to an event for a certain category made by the owner.
+                        </div>
+                            <!-- div.info -->
+                    </div>
+                        <!-- div.info-container -->
                 </div>
-                    <!-- div.picture-container -->
-                <div class="info-container col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <h4 class="info-title">How does it work?</h4>
-                    <div class="info">
-                        Bacon ipsum dolor amet bacon shoulder rump, ground round pork chop flank cupim pork belly venison ribeye tenderloin. Tenderloin andouille leberkas, porchetta tri-tip pancetta landjaeger frankfurter picanha brisket meatloaf tail turducken. Alcatra pork loin swine tenderloin, brisket ball tip pancetta capicola ground round flank filet mignon short ribs sirloin boudin short loin. Pork chop jowl pork, pastrami turkey tail kevin boudin short ribs ham hock. Swine chicken t-bone, venison shankle meatloaf frankfurter andouille tri-tip. Bresaola tail filet mignon corned beef, pork chuck rump chicken ham swine leberkas flank shoulder. Spare ribs jowl swine tenderloin chicken picanha.
+                    <!-- portfolio-section -->
+                <div class="portfolio-section contain-float row">
+                    <div class="picture-container col-lg-7 col-md-7 col-sm-12 col-xs-12" data-img-path="img/portfolio/thedeets/thedeetshome.png">
+                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
                     </div>
-                        <!-- div.info -->
+                        <!-- div.picture-container -->
+                    <div class="info-container col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                        <h4 class="info-title">Personal thoughts</h4>
+                        <div class="info">
+                            The Deets is a passion project that I look forward to work on. This iteration of the site in particular, is something I really wanted to complete. This web app showcases the more up to date skillset I have compared to some of the other projects I have on display on my portfolio. Also, it's completely workable as is. However, I would like to add a bit more features. <br><br>
+
+                            The Deets is great for personal use. The more I code for front-end development, the more I get a feel of how I want certain things to be organized. Such as OOP based JS, or how to code the SASS. I hope that you the reader will also find The Deets useful, amongst others that I will tell about this website.
+                        </div>
+                            <!-- div.info -->
+                    </div>
+                        <!-- div.info-container -->
                 </div>
-                    <!-- div.info-container -->
-            </div>
-                <!-- portfolio-section -->
-            <div class="portfolio-section contain-float row">
-                <div class="picture-container col-lg-8 col-md-8 col-sm-12 col-xs-12" data-img-path="img/portfolio/theDeets/thedeetshome.png">
-                    <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                    <!-- portfolio-section -->
+                <div class="technologies-used contain-float col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                    <h3 class="status-header">Technologies Used</h3>
+                    <div class="tech-container">
+                        <div class="technology">
+                            Ruby on Rails
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            AWS
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            Paperclip
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            Sass
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            jQuery
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            PostgreSQL
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            Bootstrap
+                        </div>
+                            <!-- div.technology -->
+                    </div>
+                        <!-- div.tech-container -->
                 </div>
-                    <!-- div.picture-container -->
-                <div class="info-container col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <h4 class="info-title">Personal thoughts</h4>
-                    <div class="info">
-                        Bacon ipsum dolor amet bacon shoulder rump, ground round pork chop flank cupim pork belly venison ribeye tenderloin. Tenderloin andouille leberkas, porchetta tri-tip pancetta landjaeger frankfurter picanha brisket meatloaf tail turducken. Alcatra pork loin swine tenderloin, brisket ball tip pancetta capicola ground round flank filet mignon short ribs sirloin boudin short loin. Pork chop jowl pork, pastrami turkey tail kevin boudin short ribs ham hock. Swine chicken t-bone, venison shankle meatloaf frankfurter andouille tri-tip. Bresaola tail filet mignon corned beef, pork chuck rump chicken ham swine leberkas flank shoulder. Spare ribs jowl swine tenderloin chicken picanha.
-                    </div>
-                        <!-- div.info -->
+                    <!-- div.technologies-used -->
+                <div class="project-status contain-float col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                    <h3 class="status-header">Project Status</h3>
+                    <span><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp; Live</span><br>
+                    <span><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp; Currently Active</span><br>
+                    <span><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp; Plans to Iterate</span><br>
+                    <span><i class="fa fa-square-o" aria-hidden="true"></i>&nbsp; Contract</span><br>
+                    <span><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp; Solo</span>
                 </div>
-                    <!-- div.info-container -->
-            </div>
-                <!-- portfolio-section -->
-            <div class="technologies-used contain-float col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
-                <h3 class="status-header">Technologies Used</h3>
-                <div class="tech-container">
-                    <div class="technology">
-                        Ruby on Rails
-                    </div>
-                        <!-- div.technology -->
-                    <div class="technology">
-                        AWS
-                    </div>
-                        <!-- div.technology -->
-                    <div class="technology">
-                        Paperclip
-                    </div>
-                        <!-- div.technology -->
-                    <div class="technology">
-                        Sass
-                    </div>
-                        <!-- div.technology -->
-                    <div class="technology">
-                        jQuery
-                    </div>
-                        <!-- div.technology -->
-                    <div class="technology">
-                        PostgreSQL
-                    </div>
-                        <!-- div.technology -->
-                    <div class="technology">
-                        Bootstrap
-                    </div>
-                        <!-- div.technology -->
+                    <!-- div.project-status -->
+              </div>
+                <!-- div.modal-body -->
+              <div class="modal-footer">
+                <div class="button-container">
+                    <button type="button" class="btn github">View Github</button>
+                    <button type="button" class="btn website">View Website</button>
+                    <button type="button" class="btn exit" data-dismiss="modal">Close</button>
                 </div>
-                    <!-- div.tech-container -->
+                    <!-- div.button-container -->
+              </div>
             </div>
-                <!-- div.technologies-used -->
-            <div class="project-status contain-float col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
-                <h3 class="status-header">Project Status</h3>
-                <span><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp; Live</span><br>
-                <span><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp; Currently Active</span><br>
-                <span><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp; Plans to Improve</span><br>
-                <span><i class="fa fa-square-o" aria-hidden="true"></i>&nbsp; Contract</span><br>
-                <span><i class="fa fa-square-o" aria-hidden="true"></i>&nbsp; Solo</span>
-            </div>
-                <!-- div.project-status -->
-          </div>
-            <!-- div.modal-body -->
-          <div class="modal-footer">
-            <div class="button-container">
-                <button type="button" class="btn exit" data-dismiss="modal">Close</button>
-                <button type="button" class="btn github">View Github</button>
-                <button type="button" class="btn website">View Website</button>
-            </div>
-                <!-- div.button-container -->
           </div>
         </div>
-      </div>
-    </div>
+            <!-- div#the-deets-modal -->
+        <div id="chef-collection" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+                <h1 class="modal-title">JK Chef Collection</h1>
+                <hr>
+                <div class="project-tags">
+                </div>
+                    <!-- div.project-tags -->
+              </div>
+                <!-- div.modal-header -->
+              <div class="modal-body contain-float">
+                <div class="portfolio-section contain-float row">
+                    <div class="picture-container col-xs-12 col-sm-12 col-md-8 col-lg-8" data-img-path="img/portfolio/jkchefcollection/jkprofileblurred.png">
+                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                    </div>
+                        <!-- div.picture-container -->
+                    <div class="info-container col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <h4 class="info-title">What is it?</h4>
+                        <div class="info">
+                            JK Chef Collection is an online web application for chefs, cooks, bartenders, and waiters to apply to <a href="http://jkchefcollection.com/" target="_blank">JK Chef Collection</a>. I was contacted by Jack Kelly through a colleague to build a site to handle the applications, information, and organization of their culinary clients.
+                        </div>
+                            <!-- div.info -->
+                    </div>
+                        <!-- div.info-container -->
+                </div>
+                    <!-- portfolio-section -->
+                <div class="portfolio-section contain-float row">
+                    <div class="picture-container col-lg-8 col-md-8 col-sm-12 col-xs-12" data-img-path="img/portfolio/jkchefcollection/jksearchblurred.png">
+                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                    </div>
+                        <!-- div.picture-container -->
+                    <div class="info-container col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <h4 class="info-title">How does it work?</h4>
+                        <div class="info">
+                            After a potential client fills out the application, the application is "pending". One of the approved accounts to review applications then decides if the application will be accepted or denied. <br><br>
+
+                            JK Chef Collection employees can search for chefs, cooks, bartenders, kitchen help, or waiters/waitresses by checking off boxes. The search can further be refined by searching for: salary range, types of cuisine, languages known, and availability. <br><br>
+
+                            Once JK employees find clients that match their desired criteria. They can use the information provided from the application to contact them and work out a contract.
+                        </div>
+                            <!-- div.info -->
+                    </div>
+                        <!-- div.info-container -->
+                </div>
+                    <!-- portfolio-section -->
+                <div class="portfolio-section contain-float row">
+                    <div class="picture-container col-lg-8 col-md-8 col-sm-12 col-xs-12" data-img-path="img/portfolio/jkchefcollection/jkapplication.png">
+                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                    </div>
+                        <!-- div.picture-container -->
+                    <div class="info-container col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <h4 class="info-title">Personal thoughts</h4>
+                        <div class="info">
+                            JK Chef Collection seemed like a huge challenge when I first heard what was being requested. However, the more I spoke to Jack and Jeff, the more details were worked out. Before we agreed on terms for the website, I made wireframes based on what they were requesting, then asked for feedback. This went on a few times until it represented what they were looking for. Then, we agreed to go on and build the full site. <br><br>
+
+                            Communication played a huge role at keeping this project run smooth. Any ambiguities I made sure to double check if that was what they wanted. However, at the same time, I tried my best to make good judgement calls at improving certain aspects that they wanted to achieve. They always appreciated the extra effort to make it easier for them, and I very rarely had to double back to make any major changes. <br><br>
+
+                            I hope that other contracts run as smooth as this one did.
+                        </div>
+                            <!-- div.info -->
+                    </div>
+                        <!-- div.info-container -->
+                </div>
+                    <!-- portfolio-section -->
+                <div class="technologies-used contain-float col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                    <h3 class="status-header">Technologies Used</h3>
+                    <div class="tech-container">
+                        <div class="technology">
+                            Ruby on Rails
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            AWS
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            Paperclip
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            Sass
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            jQuery
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            PostgreSQL
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            Bootstrap
+                        </div>
+                            <!-- div.technology -->
+                    </div>
+                        <!-- div.tech-container -->
+                </div>
+                    <!-- div.technologies-used -->
+                <div class="project-status contain-float col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                    <h3 class="status-header">Project Status</h3>
+                    <span><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp; Live</span><br>
+                    <span><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp; Currently Active</span><br>
+                    <span><i class="fa fa-square-o" aria-hidden="true"></i>&nbsp; Plans to Iterate</span><br>
+                    <span><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp; Contract</span><br>
+                    <span><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp; Solo</span>
+                </div>
+                    <!-- div.project-status -->
+              </div>
+                <!-- div.modal-body -->
+              <div class="modal-footer">
+                <div class="button-container">
+                    <button type="button" class="btn exit" data-dismiss="modal">Close</button>
+                </div>
+                    <!-- div.button-container -->
+              </div>
+            </div>
+          </div>
+        </div>
+            <!-- div#chef-collection -->
+        <div id="sandwich-builds" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+                <h1 class="modal-title">Sandwich Builds</h1>
+                <hr>
+                <div class="project-tags">
+                </div>
+                    <!-- div.project-tags -->
+              </div>
+                <!-- div.modal-header -->
+              <div class="modal-body contain-float">
+                <div class="portfolio-section contain-float row">
+                    <div class="picture-container col-xs-12 col-sm-12 col-md-8 col-lg-8" data-img-path="img/portfolio/sandwichbuilds/landing.png">
+                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                    </div>
+                        <!-- div.picture-container -->
+                    <div class="info-container col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <h4 class="info-title">What is it?</h4>
+                        <div class="info">
+                            Sandwich builds is for the sandwich craftsman. It's a node web application that helps you create and rate sandwich recipes upon sign up. 
+                        </div>
+                            <!-- div.info -->
+                    </div>
+                        <!-- div.info-container -->
+                </div>
+                    <!-- portfolio-section -->
+                <div class="portfolio-section contain-float row">
+                    <div class="picture-container col-lg-8 col-md-8 col-sm-12 col-xs-12" data-img-path="img/portfolio/sandwichbuilds/sandwich-overview.png">
+                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                    </div>
+                        <!-- div.picture-container -->
+                    <div class="info-container col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <h4 class="info-title">How does it work?</h4>
+                        <div class="info">
+                            After a user signs up or logs in, they can view passed recipes by clicking on their names. When you click a sandwich name, the recipe appears in an overview where you can view it. <br><br>
+
+                            If a user wants to create another recipe, they simply have to scroll down and start plugging in information for the sandwich. There is a navigation bar where the user can click on multiple "segments" for the recipe. Materials, stats, and directions to name a few. Before the user saves the recipe they view an overview of what the sandwich is.
+                        </div>
+                            <!-- div.info -->
+                    </div>
+                        <!-- div.info-container -->
+                </div>
+                    <!-- portfolio-section -->
+                <div class="portfolio-section contain-float row">
+                    <div class="picture-container col-lg-8 col-md-8 col-sm-12 col-xs-12" data-img-path="img/portfolio/sandwichbuilds/profile.png">
+                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                    </div>
+                        <!-- div.picture-container -->
+                    <div class="info-container col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <h4 class="info-title">Personal thoughts</h4>
+                        <div class="info">
+                            Sandwich builds was my first created full stack web application. The intention was to have it be "RPG"ish in terms of theme. A user can rate a sandwich on the 5 basic tastes, then give directions on how to have your sandwich be forged. <br><br>
+
+                            A user would also be able to search for sandwich recipes based on stats, or materials that they already have. I believe there is a lot potential for this site to be frequented by the sandwich connoisseur. There are a lot of additional features I have in mind to add. But there are other things that I want to improve first. With that said, I will just leave this project as inactive for now.
+                        </div>
+                            <!-- div.info -->
+                    </div>
+                        <!-- div.info-container -->
+                </div>
+                    <!-- portfolio-section -->
+                <div class="technologies-used contain-float col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                    <h3 class="status-header">Technologies Used</h3>
+                    <div class="tech-container">
+                        <div class="technology">
+                            Node
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            Express
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            MongoDB
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            CSS
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            jQuery
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            Cloudinary
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            Bootstrap
+                        </div>
+                            <!-- div.technology -->
+                    </div>
+                        <!-- div.tech-container -->
+                </div>
+                    <!-- div.technologies-used -->
+                <div class="project-status contain-float col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                    <h3 class="status-header">Project Status</h3>
+                    <span><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp; Live</span><br>
+                    <span><i class="fa fa-square-o" aria-hidden="true"></i>&nbsp; Currently Active</span><br>
+                    <span><i class="fa fa-square-o" aria-hidden="true"></i>&nbsp; Plans to Iterate</span><br>
+                    <span><i class="fa fa-square-o" aria-hidden="true"></i>&nbsp; Contract</span><br>
+                    <span><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp; Solo</span>
+                </div>
+                    <!-- div.project-status -->
+              </div>
+                <!-- div.modal-body -->
+              <div class="modal-footer">
+                <div class="button-container">
+                    <a href="https://github.com/JustinRegiReyes/sammichBuilder" target="_blank"><button type="button" class="btn github">View Github</button></a>
+                    <a href="http://sandwich-builds.herokuapp.com/" target="_blank"><button type="button" class="btn website">View Website</button></a>
+                    <button type="button" class="btn exit" data-dismiss="modal">Close</button>
+                </div>
+                    <!-- div.button-container -->
+              </div>
+            </div>
+          </div>
+        </div>
+            <!-- div#sandwich-builds -->
+        <div id="assassins-game" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+                <h1 class="modal-title">Assassins The Game</h1>
+                <hr>
+                <div class="project-tags">
+                </div>
+                    <!-- div.project-tags -->
+              </div>
+                <!-- div.modal-header -->
+              <div class="modal-body contain-float">
+                <div class="portfolio-section contain-float row">
+                    <div class="picture-container col-xs-12 col-sm-12 col-md-8 col-lg-8" data-img-path="img/portfolio/assassins/gamepage.png">
+                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                    </div>
+                        <!-- div.picture-container -->
+                    <div class="info-container col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <h4 class="info-title">What is it?</h4>
+                        <div class="info">
+                            Assassins is a live action role playing game where a group of people receive a "target" who they must eliminate. Upon doing so, you receive their target and continue. The rules vary from game to game depending on the moderator, however there are a base of rules that is widely used. <br><br>
+
+                            This web application organizes a game for both players and moderators.
+                        </div>
+                            <!-- div.info -->
+                    </div>
+                        <!-- div.info-container -->
+                </div>
+                    <!-- portfolio-section -->
+                <div class="portfolio-section contain-float row">
+                    <div class="picture-container col-lg-8 col-md-8 col-sm-12 col-xs-12" data-img-path="img/portfolio/assassins/adminpage.png">
+                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                    </div>
+                        <!-- div.picture-container -->
+                    <div class="info-container col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <h4 class="info-title">How does it work?</h4>
+                        <div class="info">
+                            Moderators are able to create a game with a passcode and specific rules if they choose. They can also see how many players have joined the game, their information, and communicate with the game. When the moderator feels that the matchup is fine, they can start the game.<br><br>
+
+                            Assassins can view other assassins still in the game, or eliminated, and post comments under their guise for fun. When assassins are still in the game, a fake picture is there for everyone to see. But once they are eliminated their real photo is revealed. <br><br>
+
+                            Assassins is based on scouts honor. So if the assailant has eliminated their target, they press a button to confirm the kill. The victim then clicks a final confirmation that they have indeed been eliminated. Once both the assailant and survivor agrees on the kill, the next target is assigned.
+                        </div>
+                            <!-- div.info -->
+                    </div>
+                        <!-- div.info-container -->
+                </div>
+                    <!-- portfolio-section -->
+                <div class="portfolio-section contain-float row">
+                    <div class="picture-container col-lg-8 col-md-8 col-sm-12 col-xs-12" data-img-path="img/portfolio/assassins/rules.png">
+                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                    </div>
+                        <!-- div.picture-container -->
+                    <div class="info-container col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <h4 class="info-title">Personal thoughts</h4>
+                        <div class="info">
+                            Assassins is a fun project that I always wanted to code and complete. The logic can definitely be cleaned up for users joining as assassins. And also how the targets are assigned. I do plan on adding features such as: improved UI, clearer comments, and private messaging.
+                        </div>
+                            <!-- div.info -->
+                    </div>
+                        <!-- div.info-container -->
+                </div>
+                    <!-- portfolio-section -->
+                <div class="technologies-used contain-float col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                    <h3 class="status-header">Technologies Used</h3>
+                    <div class="tech-container">
+                        <div class="technology">
+                            Angular
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            MongoDB
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            Express
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            Sass
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            jQuery
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            Uploadcare
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            Bootstrap
+                        </div>
+                            <!-- div.technology -->
+                    </div>
+                        <!-- div.tech-container -->
+                </div>
+                    <!-- div.technologies-used -->
+                <div class="project-status contain-float col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                    <h3 class="status-header">Project Status</h3>
+                    <span><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp; Live</span><br>
+                    <span><i class="fa fa-square-o" aria-hidden="true"></i>&nbsp; Currently Active</span><br>
+                    <span><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp; Plans to Iterate</span><br>
+                    <span><i class="fa fa-square-o" aria-hidden="true"></i>&nbsp; Contract</span><br>
+                    <span><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp; Solo</span>
+                </div>
+                    <!-- div.project-status -->
+              </div>
+                <!-- div.modal-body -->
+              <div class="modal-footer">
+                <div class="button-container">
+                    <button type="button" class="btn github">View Github</button>
+                    <button type="button" class="btn website">View Website</button>
+                    <button type="button" class="btn exit" data-dismiss="modal">Close</button>
+                </div>
+                    <!-- div.button-container -->
+              </div>
+            </div>
+          </div>
+        </div>
+            <!-- div#assassins-game -->
+        <div id="throw-words" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+                <h1 class="modal-title">Throw Words</h1>
+                <hr>
+                <div class="project-tags">
+                </div>
+                    <!-- div.project-tags -->
+              </div>
+                <!-- div.modal-header -->
+              <div class="modal-body contain-float">
+                <div class="portfolio-section contain-float row">
+                    <div class="picture-container col-xs-12 col-sm-12 col-md-8 col-lg-8" data-img-path="img/portfolio/throwwords/game-screen.png">
+                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                    </div>
+                        <!-- div.picture-container -->
+                    <div class="info-container col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <h4 class="info-title">What is it?</h4>
+                        <div class="info">
+                            Throw Words is fast paced team charades. Try and get as many points as you can before your team timer runs out!
+                        </div>
+                            <!-- div.info -->
+                    </div>
+                        <!-- div.info-container -->
+                </div>
+                    <!-- portfolio-section -->
+                <div class="portfolio-section contain-float row">
+                    <div class="picture-container col-lg-8 col-md-8 col-sm-12 col-xs-12" data-img-path="img/portfolio/throwwords/rules.png">
+                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                    </div>
+                        <!-- div.picture-container -->
+                    <div class="info-container col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <h4 class="info-title">How does it work?</h4>
+                        <div class="info">
+                            First, you put in at least 3 words per person that is participating in the game into the array of words to act out. Then, once you feel like there are enough words, you press start. <br><br>
+
+                            Every turn a team will have a guesser. If your guesser says the Throw Word then your team gets the point. It will then be the other teams turn. <br><br>
+
+                            The guesser will now quickly rotate with another member of their team, and will be they will be the guesser of their next turn.
+                            The guesser can opt to pass in order pause their team's timer. However, the other team has the chance to get the point. In the event both team's guessers pass consecutively, neither team will get the point and the next Throw Word will appear on screen. <br><br>
+
+                            The team with the most points when both teams timer's expires, wins!
+                        </div>
+                            <!-- div.info -->
+                    </div>
+                        <!-- div.info-container -->
+                </div>
+                    <!-- portfolio-section -->
+                <div class="portfolio-section contain-float row">
+                    <div class="picture-container col-lg-8 col-md-8 col-sm-12 col-xs-12" data-img-path="img/portfolio/throwwords/landing.png">
+                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                    </div>
+                        <!-- div.picture-container -->
+                    <div class="info-container col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <h4 class="info-title">Personal thoughts</h4>
+                        <div class="info">
+                            Throw Words started off as a side project to get used to crudding simple information. However, I found it to be fun to gamify it somehow. Eventually I ended up with Throw Words! <br><br>
+
+                            I am fairly proud of the outcome of this, and I will definitely find ways to improve the gameplay. Maybe different hinderences on acting it out? Such as no talking, or one word only for that turn. <br><br>
+
+                            Ulimately, I see Throw Words being a fun fast paced charade alternative with different rules and quirks per turn.
+                        </div>
+                            <!-- div.info -->
+                    </div>
+                        <!-- div.info-container -->
+                </div>
+                    <!-- portfolio-section -->
+                <div class="technologies-used contain-float col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                    <h3 class="status-header">Technologies Used</h3>
+                    <div class="tech-container">
+                        <div class="technology">
+                            MongoDB
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            Express
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            CSS
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            jQuery
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            Bootstrap
+                        </div>
+                            <!-- div.technology -->
+                    </div>
+                        <!-- div.tech-container -->
+                </div>
+                    <!-- div.technologies-used -->
+                <div class="project-status contain-float col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                    <h3 class="status-header">Project Status</h3>
+                    <span><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp; Live</span><br>
+                    <span><i class="fa fa-square-o" aria-hidden="true"></i>&nbsp; Currently Active</span><br>
+                    <span><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp; Plans to Iterate</span><br>
+                    <span><i class="fa fa-square-o" aria-hidden="true"></i>&nbsp; Contract</span><br>
+                    <span><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp; Solo</span>
+                </div>
+                    <!-- div.project-status -->
+              </div>
+                <!-- div.modal-body -->
+              <div class="modal-footer">
+                <div class="button-container">
+                    <a href="https://github.com/JustinRegiReyes/Throw_Words"><button type="button" class="btn github">View Github</button></a>
+                    <a href="http://throw-words.herokuapp.com/"><button type="button" class="btn website">View Website</button></a>
+                    <button type="button" class="btn exit" data-dismiss="modal">Close</button>
+                </div>
+                    <!-- div.button-container -->
+              </div>
+            </div>
+          </div>
+        </div>
+            <!-- div#throw-words -->
+        <div id="bootcamp-reviews" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+                <h1 class="modal-title">Coding Bootcamp Reviews</h1>
+                <hr>
+                <div class="project-tags">
+                </div>
+                    <!-- div.project-tags -->
+              </div>
+                <!-- div.modal-header -->
+              <div class="modal-body contain-float">
+                <div class="portfolio-section contain-float row">
+                    <div class="picture-container col-xs-12 col-sm-12 col-md-8 col-lg-8" data-img-path="img/portfolio/bootcampreviews/overview.png">
+                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                    </div>
+                        <!-- div.picture-container -->
+                    <div class="info-container col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <h4 class="info-title">What is it?</h4>
+                        <div class="info">
+                            View, find, and review the best coding bootcamp for you! <br><br>
+
+                            Coding Bootcamp reviews is a website meant to help people that are looking to make the leap to a career in code. A user can view coding bootcamps in the Bay Area and see reviews made by other students who have taken to the program. A "Rate My Professor" for coding bootcamps if you will.
+                        </div>
+                            <!-- div.info -->
+                    </div>
+                        <!-- div.info-container -->
+                </div>
+                    <!-- portfolio-section -->
+                <div class="portfolio-section contain-float row">
+                    <div class="picture-container col-lg-8 col-md-8 col-sm-12 col-xs-12" data-img-path="img/portfolio/bootcampreviews/reviews.png">
+                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                    </div>
+                        <!-- div.picture-container -->
+                    <div class="info-container col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <h4 class="info-title">How does it work?</h4>
+                        <div class="info">
+                            A user can search for a coding bootcamp and view an overall rating, general information, and a percentage of ratings for a few specific rating topics. These topics include if the bootcamp was worth the price, location score, job search help, and campus and facilities. <br><br>
+
+                            A user can view reviews in detail by scrolling down the page. Here you can find reviews left by students that has attended the bootcamp with personal ratings, and a personal opinion if they choose to leave one.<br><br> 
+
+                            If a user wants to leave a review of a bootcamp, they would have to create an account and write a review. The review would then go towards the ratings of the bootcamp and the rating would adjust. <br><br>
+                        </div>
+                            <!-- div.info -->
+                    </div>
+                        <!-- div.info-container -->
+                </div>
+                    <!-- portfolio-section -->
+                <div class="portfolio-section contain-float row">
+                    <div class="picture-container col-lg-8 col-md-8 col-sm-12 col-xs-12" data-img-path="img/portfolio/bootcampreviews/landing.png">
+                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                    </div>
+                        <!-- div.picture-container -->
+                    <div class="info-container col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <h4 class="info-title">Personal thoughts</h4>
+                        <div class="info">
+                            This project was definitely interesting. It was a group project that had it's ups and downs. <br><br>
+
+                            Let's start with the downs. Usually a common problem is too many cooks in the kitchen. However, in this instance no one was really calling the shots. And if someone were to start to move towards making decisions, that decision would soon be undone by the group. Another problem was that not everyone was up to par in merging git branches without causing conflicts. You mix that with a few people stepping on eachother's toes and taking goals that weren't theres, caused a bit of a stressful situation. <br><br>
+
+                            Alright. The ups. First of all, the downs were resolved by openly communicating. Also, by being extremely clear on who was doing which task. Pair programming helped communication, and lesen errors as well. When the group finally started to click and get morning scrums rolling, it was really nice to have things be completed without having to worry about it. It was like coming to an in progress puzzle with your piece to find that other pieces have been filled out while you were finding your piece. The satisfaction of working with others and accomplishing something is definitely more enjoyable for me than working solo. <br><br>
+                        </div>
+                            <!-- div.info -->
+                    </div>
+                        <!-- div.info-container -->
+                </div>
+                    <!-- portfolio-section -->
+                <div class="technologies-used contain-float col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                    <h3 class="status-header">Technologies Used</h3>
+                    <div class="tech-container">
+                        <div class="technology">
+                            Ruby on Rails
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            Sass
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            jQuery
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            PostgreSQL
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            Bootstrap
+                        </div>
+                            <!-- div.technology -->
+                    </div>
+                        <!-- div.tech-container -->
+                </div>
+                    <!-- div.technologies-used -->
+                <div class="project-status contain-float col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                    <h3 class="status-header">Project Status</h3>
+                    <span><i class="fa fa-square-o" aria-hidden="true"></i>&nbsp; Live</span><br>
+                    <span><i class="fa fa-square-o" aria-hidden="true"></i>&nbsp; Currently Active</span><br>
+                    <span><i class="fa fa-square-o" aria-hidden="true"></i>&nbsp; Plans to Iterate</span><br>
+                    <span><i class="fa fa-square-o" aria-hidden="true"></i>&nbsp; Contract</span><br>
+                    <span><i class="fa fa-square-o" aria-hidden="true"></i>&nbsp; Solo</span>
+                </div>
+                    <!-- div.project-status -->
+              </div>
+                <!-- div.modal-body -->
+              <div class="modal-footer">
+                <div class="button-container">
+                    <a href="https://github.com/JustinRegiReyes/c-bootcamp-reviews"><button type="button" class="btn github">View Github</button></a>
+                    <button type="button" class="btn exit" data-dismiss="modal">Close</button>
+                </div>
+                    <!-- div.button-container -->
+              </div>
+            </div>
+          </div>
+        </div>
+            <!-- div#bootcamp-reviews -->
+        <div id="quake-search" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+                <h1 class="modal-title">SF Quake Search</h1>
+                <hr>
+                <div class="project-tags">
+                </div>
+                    <!-- div.project-tags -->
+              </div>
+                <!-- div.modal-header -->
+              <div class="modal-body contain-float">
+                <div class="portfolio-section contain-float row">
+                    <div class="picture-container col-xs-12 col-sm-12 col-md-8 col-lg-8" data-img-path="img/portfolio/quakesearch/zoomedout.png">
+                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                    </div>
+                        <!-- div.picture-container -->
+                    <div class="info-container col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <h4 class="info-title">What is it?</h4>
+                        <div class="info">
+                            Search through an earthquake API for recent earthquakes. The API only catalogues earthquakes within the last month, unless you pay for the full API.
+                        </div>
+                            <!-- div.info -->
+                    </div>
+                        <!-- div.info-container -->
+                </div>
+                    <!-- portfolio-section -->
+                <div class="portfolio-section contain-float row">
+                    <div class="picture-container col-lg-8 col-md-8 col-sm-12 col-xs-12" data-img-path="img/portfolio/quakesearch/semizoomed.png">
+                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                    </div>
+                        <!-- div.picture-container -->
+                    <div class="info-container col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <h4 class="info-title">How does it work?</h4>
+                        <div class="info">
+                             Input the date of that you want earthquakes to appear since. Followed by the minimum magnitude of the earthquake. Then finally by X degrees outward, since the focal point of the map is in SF. <br><br>
+
+                             Users can click and drag around the map to see markers of where the earthquakes are. Or they can click on the results on the right hand side to be taken to that specific earthquake marker.
+                        </div>
+                            <!-- div.info -->
+                    </div>
+                        <!-- div.info-container -->
+                </div>
+                    <!-- portfolio-section -->
+                <div class="portfolio-section contain-float row">
+                    <div class="picture-container col-lg-8 col-md-8 col-sm-12 col-xs-12" data-img-path="img/portfolio/quakesearch/close.png">
+                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                    </div>
+                        <!-- div.picture-container -->
+                    <div class="info-container col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <h4 class="info-title">Personal thoughts</h4>
+                        <div class="info">
+                            This project was to practice handling API and json data. Then taking that data and using it to make something cohesive. I used the earthquake.usgs.gov API with the Google maps API. <br><br>
+
+                            This project really helped me understand the basics of handling an API and using callbacks to handle asynchronous functions.
+                        </div>
+                            <!-- div.info -->
+                    </div>
+                        <!-- div.info-container -->
+                </div>
+                    <!-- portfolio-section -->
+                <div class="technologies-used contain-float col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                    <h3 class="status-header">Technologies Used</h3>
+                    <div class="tech-container">
+                        <div class="technology">
+                            Node
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            Express
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            CSS
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            jQuery
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            Bootstrap
+                        </div>
+                            <!-- div.technology -->
+                    </div>
+                        <!-- div.tech-container -->
+                </div>
+                    <!-- div.technologies-used -->
+                <div class="project-status contain-float col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                    <h3 class="status-header">Project Status</h3>
+                    <span><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp; Live</span><br>
+                    <span><i class="fa fa-square-o" aria-hidden="true"></i>&nbsp; Currently Active</span><br>
+                    <span><i class="fa fa-square-o" aria-hidden="true"></i>&nbsp; Plans to Iterate</span><br>
+                    <span><i class="fa fa-square-o" aria-hidden="true"></i>&nbsp; Contract</span><br>
+                    <span><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp; Solo</span>
+                </div>
+                    <!-- div.project-status -->
+              </div>
+                <!-- div.modal-body -->
+              <div class="modal-footer">
+                <div class="button-container">
+                    <a href="https://github.com/JustinRegiReyes/quakeSearchSf"><button type="button" class="btn github">View Github</button></a>
+                    <a href="http://sf-quakesearch.herokuapp.com/"><button type="button" class="btn website">View Website</button></a>
+                    <button type="button" class="btn exit" data-dismiss="modal">Close</button>
+                </div>
+                    <!-- div.button-container -->
+              </div>
+            </div>
+          </div>
+        </div>
+            <!-- div#quake-search -->
+        <div id="event-wall" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+                <h1 class="modal-title">Event Wall</h1>
+                <hr>
+                <div class="project-tags">
+                </div>
+                    <!-- div.project-tags -->
+              </div>
+                <!-- div.modal-header -->
+              <div class="modal-body contain-float">
+                <div class="portfolio-section contain-float row">
+                    <div class="picture-container col-xs-12 col-sm-12 col-md-8 col-lg-8" data-img-path="img/portfolio/eventwall/walloverview.png">
+                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                    </div>
+                        <!-- div.picture-container -->
+                    <div class="info-container col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <h4 class="info-title">What is it?</h4>
+                        <div class="info">
+                            Event wall is a media wall to keep your guests engaged throughout the event. Guests can tweet using a specific hashtag, or visit the stream url to send a message that will appear on the wall. Some ideal events it can be used for are wedding receptions, Sweet 16s, Cotillions, work events, and conventions.<br><br>
+
+                            Guests can read funny updates, or see the event from other guests point of view. 
+                        </div>
+                            <!-- div.info -->
+                    </div>
+                        <!-- div.info-container -->
+                </div>
+                    <!-- portfolio-section -->
+                <div class="portfolio-section contain-float row">
+                    <div class="picture-container col-lg-8 col-md-8 col-sm-12 col-xs-12" data-img-path="img/portfolio/eventwall/wall.png">
+                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                    </div>
+                        <!-- div.picture-container -->
+                    <div class="info-container col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <h4 class="info-title">How does it work?</h4>
+                        <div class="info">
+                            Users that sign up to EventWall can create a stream to display during there event. They choose the hashtag that will be tracked on Twitter that will be used for the event. Guests can also go to a specific url to submit messages and photos specifically to the website. A banner, and logo can also be uploaded to display on stream. <br><br>
+
+                            The messages are looped through on stream that can be displayed on a wall. There are controls that a user can use to go back in tweets, go forward, pause the stream, or even remove certain tweets/messages.
+                        </div>
+                            <!-- div.info -->
+                    </div>
+                        <!-- div.info-container -->
+                </div>
+                    <!-- portfolio-section -->
+                <div class="portfolio-section contain-float row">
+                    <div class="picture-container col-lg-8 col-md-8 col-sm-12 col-xs-12" data-img-path="img/portfolio/eventwall/landing.png">
+                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                    </div>
+                        <!-- div.picture-container -->
+                    <div class="info-container col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <h4 class="info-title">Personal thoughts</h4>
+                        <div class="info">
+                            This project was originally for my friends Juan and Lisa for their wedding reception. In fact, the project folder locally is still called "LisaFoundTheJuan". It was brought to my intention that there was a projector, but they weren't exactly sure what to use it for. So, I thought having a stream of tweets, pictures, and messages from all of the guests through out the day was a fun way to use the projector. <br><br>
+
+                            I thought it would be really cool to have all of these guests have this memorable event in their heads, but then they get to see it from a different perspective. Sure they saw this, but did they see it from over there. Maybe they didn't even know of something that happened and now they get to see it. <br><br>
+
+                            The more I coded, I thought it would be great if I can make it a full blown full stack web application as opposed to a personal stream. Where users can input their own logos, banners, and hashtags. I got the basic logic of it down, I just have to improve the front end.
+                        </div>
+                            <!-- div.info -->
+                    </div>
+                        <!-- div.info-container -->
+                </div>
+                    <!-- portfolio-section -->
+                <div class="technologies-used contain-float col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                    <h3 class="status-header">Technologies Used</h3>
+                    <div class="tech-container">
+                        <div class="technology">
+                            Angular
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            MongoDB
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            Express
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            Uploadcare
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            jQuery
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            Sass
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            Bootstrap
+                        </div>
+                            <!-- div.technology -->
+                    </div>
+                        <!-- div.tech-container -->
+                </div>
+                    <!-- div.technologies-used -->
+                <div class="project-status contain-float col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                    <h3 class="status-header">Project Status</h3>
+                    <span><i class="fa fa-square-o" aria-hidden="true"></i>&nbsp; Live</span><br>
+                    <span><i class="fa fa-square-o" aria-hidden="true"></i>&nbsp; Currently Active</span><br>
+                    <span><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp; Plans to Iterate</span><br>
+                    <span><i class="fa fa-square-o" aria-hidden="true"></i>&nbsp; Contract</span><br>
+                    <span><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp; Solo</span>
+                </div>
+                    <!-- div.project-status -->
+              </div>
+                <!-- div.modal-body -->
+              <div class="modal-footer">
+                <div class="button-container">
+                    <a href="https://github.com/JustinRegiReyes/eventwall"><button type="button" class="btn github">View Github</button></a>
+                    <button type="button" class="btn exit" data-dismiss="modal">Close</button>
+                </div>
+                    <!-- div.button-container -->
+              </div>
+            </div>
+          </div>
+        </div>
+            <!-- div#event-wall -->
+        <div id="coin-race" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+                <h1 class="modal-title">Coin Race</h1>
+                <hr>
+                <div class="project-tags">
+                </div>
+                    <!-- div.project-tags -->
+              </div>
+                <!-- div.modal-header -->
+              <div class="modal-body contain-float">
+                <div class="portfolio-section contain-float row">
+                    <div class="picture-container col-xs-12 col-sm-12 col-md-8 col-lg-8" data-img-path="img/portfolio/coinrace/gameplay.png">
+                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                    </div>
+                        <!-- div.picture-container -->
+                    <div class="info-container col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <h4 class="info-title">What is it?</h4>
+                        <div class="info">
+                            Race against your friend to collect coins to impress the princess! <br><br>
+                        </div>
+                            <!-- div.info -->
+                    </div>
+                        <!-- div.info-container -->
+                </div>
+                    <!-- portfolio-section -->
+                <div class="portfolio-section contain-float row">
+                    <div class="picture-container col-lg-8 col-md-8 col-sm-12 col-xs-12" data-img-path="img/portfolio/coinrace/characterselect.png">
+                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                    </div>
+                        <!-- div.picture-container -->
+                    <div class="info-container col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <h4 class="info-title">How does it work?</h4>
+                        <div class="info">
+                            The players move around to collect coins that appear in the same region for both players. Whoever gets to the coin first gets the coin as it moves to another region on the grid. <br><br>
+
+                            Each player enters their name, and chooses a character. Once they are ready they click "lock in". Each player has a set of controls that they can use to move up, down, left, or right. Once they feel comfortable with the controls they can start the game. <br><br>
+
+                            On the grid are also spooky monsters that if you run into them, you are sent to the beginning of the grid. Avoid them, and collect enough coins to unlock the princess. Run to her with your hard earned coins to win the game.
+                        </div>
+                            <!-- div.info -->
+                    </div>
+                        <!-- div.info-container -->
+                </div>
+                    <!-- portfolio-section -->
+                <div class="portfolio-section contain-float row">
+                    <div class="picture-container col-lg-8 col-md-8 col-sm-12 col-xs-12" data-img-path="img/portfolio/coinrace/oldsquareracers.jpg">
+                        <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
+                    </div>
+                        <!-- div.picture-container -->
+                    <div class="info-container col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <h4 class="info-title">Personal thoughts</h4>
+                        <div class="info">
+                            This was my first project that I completed in code. The whole process, including its first iteration took two weeks. Square Racer 1 was very very simple. And just featured a square moving across a grid with one button. A mashing game against the other player. <br><br>
+
+                            Over the weekend of that first week I thought it would be cool to have objects to avoid so I thought of a process to keep track of the square in a multi row grid. Then, I found a learned about setInterval and set logic to place boxes to occupy certain areas.Which led to Square Racer 2. <br><br>
+
+                            Eventually I thought of a task for these two squares to complete before the can simply make it to the finish line. I added the coin feature to make it really fun over the course of week 2. I added some CSS and ended up with CoinRacer. <br><br>
+
+                            I was really excited adding features and improving this project. It was the first thing I ever built with code and it was truly truly rewarding. I think of this often when I think of how far I've come since the beginning, and also how hungry I was to learn more in the beginning.
+                        </div>
+                            <!-- div.info -->
+                    </div>
+                        <!-- div.info-container -->
+                </div>
+                    <!-- portfolio-section -->
+                <div class="technologies-used contain-float col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                    <h3 class="status-header">Technologies Used</h3>
+                    <div class="tech-container">
+                        <div class="technology">
+                            Node
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            Express
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            CSS
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            jQuery
+                        </div>
+                            <!-- div.technology -->
+                        <div class="technology">
+                            Bootstrap
+                        </div>
+                            <!-- div.technology -->
+                    </div>
+                        <!-- div.tech-container -->
+                </div>
+                    <!-- div.technologies-used -->
+                <div class="project-status contain-float col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                    <h3 class="status-header">Project Status</h3>
+                    <span><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp; Live</span><br>
+                    <span><i class="fa fa-square-o" aria-hidden="true"></i>&nbsp; Currently Active</span><br>
+                    <span><i class="fa fa-square-o" aria-hidden="true"></i>&nbsp; Plans to Iterate</span><br>
+                    <span><i class="fa fa-square-o" aria-hidden="true"></i>&nbsp; Contract</span><br>
+                    <span><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp; Solo</span>
+                </div>
+                    <!-- div.project-status -->
+              </div>
+                <!-- div.modal-body -->
+              <div class="modal-footer">
+                <div class="button-container">
+                    <a href="https://github.com/JustinRegiReyes/Coin-Racer"><button type="button" class="btn github">View Github</button></a>
+                    <a href="http://coinrace.herokuapp.com/"><button type="button" class="btn website">View Website</button></a>
+                    <button type="button" class="btn exit" data-dismiss="modal">Close</button>
+                </div>
+                    <!-- div.button-container -->
+              </div>
+            </div>
+          </div>
+        </div>
+            <!-- div#coin-race -->
 
     <!-- JavaScript -->
     <script src="public/js/application/app.min.js"></script>

@@ -80,10 +80,13 @@ div.modal {
 						height: auto;
 						h4.info-title {
 							font-family: $roboto;
-							font-size: 28px;
+							font-size: 32px;
 							font-weight: bold;
 							margin: 0 auto 20px;
 						} //h4.info-title
+						div.info {
+							font-size: 16px;
+						}
 					} //div.info-container
 				} //div.portfolio-section
 				div.project-status {
@@ -135,6 +138,9 @@ div.modal {
 						border-radius: 0;
 						color: white;
 						width: 120px;
+						&[disabled=true]:hover {
+							cursor: not-allowed;
+						}
 						&:active, &:focus {
 							outline: none;
 						}
@@ -171,12 +177,54 @@ div.modal {
 			} //div.modal-content
 		} //div.modal-dialog
 	} // div.modal max-width: $break-md
+	@media screen and (max-width: $break-sm) {
+		div.modal-dialog {
+			div.modal-content {
+				div.modal-header {
+				} //div.modal-header
+				div.modal-body {
+					.portfolio-section {
+						margin-bottom: 80px;
+						div.picture-container {
+							margin-bottom: 40px;
+							min-height: 200px;
+							img {
+								max-height: 100%;
+							}
+						}
+					} //div.portfolio-section
+					div.technologies-used {
+						padding: 0;
+						div.tech-container {
+							padding: 0;
+						} //div.tech-container
+					} //div.technologies-used
+					div.project-status {
+						padding: 0;
+						span {
+							padding-left: 10px;
+						}
+					} //div.project-status
+				} //div.modal-body
+				div.modal-footer {
+					div.button-container {
+						button.btn {
+							width: 250px;
+						    display: block;
+						    margin: 15px auto;
+						} //button.btn
+					} //div.button-container
+				} //div.modal-footer
+			} //div.modal-content
+		} //div.modal-dialog
+	} // div.modal max-width: $break-sm
 } //div.modal
 
 // bootstrap modals END
 
 section {
 	position: relative;
+	min-height: 100vh;
 	z-index: 0;
 	padding-top: 50px;
 	div.header {
@@ -219,7 +267,7 @@ section {
 		opacity: 0;
 		top: 100px;
 		padding: 0 50px;
-		div.info {
+		div.info { 
 			padding: 0 40px;
 			p {
 				font-size: 18px;
@@ -228,7 +276,6 @@ section {
 		} //div.info 
 	} //div.content
 	&#about {
-		padding-top: 50px;
 		&:before {
 			content: "";
 		    position: fixed;
@@ -258,6 +305,21 @@ section {
 					height: 250px;
 					border-radius: 50%;
 				}
+				a.resume {
+					&:active, &:focus {
+						outline: none;
+					}
+					display: block;
+				    margin: 10px auto;
+				    width: 150px;
+					button {
+						border-radius: 0;
+						background-color: $jeanBlue;
+						color: white;
+						width: 100%;
+					    height: 35px;
+					}
+				}
 			} //div.img-wrapper
 			div.info {
 				div#i-am-wrapper {
@@ -282,19 +344,34 @@ section {
 						font-weight: 500;
 					}
 				}
+				a.resume {
+					&:active, &:focus {
+						outline: none;
+					}
+					display: block;
+				    width: 150px;
+					button {
+						border-radius: 0;
+						background-color: $jeanBlue;
+						color: white;
+						width: 100%;
+					    height: 35px;
+					}
+				}
 			}
 			div.skills {
-				margin: 10px auto;
+				margin: 60px auto 10px;
 				padding: 0;
 				h2 {
 					font-family: $raleway;
 					font-size: 24px;
 					text-align: center;
 					font-weight: bold;
+					margin: 20px auto;
 				}
 				div.skills-container {
-					border: 1px solid $denimJeanBlue;
 					div.skill-box {
+						border-top: 1px solid $denimJeanBlue;
 						h3.skill-header {
 							font-family: $raleway;
 							font-size: 18px;
@@ -309,7 +386,6 @@ section {
 		display: block;
 		background-color: white;
 		height: auto;
-		padding-top: 0px;
 		overflow: hidden;
 		div.container-fluid {
 			height: auto;
@@ -347,7 +423,7 @@ section {
 				} //div#grid-filter-container
 				div#portfolio-grid {
 					padding: 0;
-					min-height: 200px;
+					min-height: 600px;
 					position: relative;
 					div.portfolio-box {
 						height: 325px;
@@ -410,9 +486,8 @@ section {
 	} // &#portfolio
 	&#contact {
 		background-color: $denimJeanBlue;
-		min-height: 445px;
 		height: auto;
-		padding: 30px 10px;
+		padding: 50px 10px 30px;
 		overflow: hidden;
 		div.header {
 			div.title-wrapper {
@@ -427,7 +502,7 @@ section {
 		div.content {
 			height: auto;
 			color: white;
-			padding: 25px 50px 50px;
+			padding: 100px 50px 50px;
 			div.contact-header {
 				text-align: center;
 				font-size: 25px;
@@ -438,8 +513,8 @@ section {
 				img.headshot {
 					display: block;
 					margin: 20px auto;
-					width: 150px;
-					height: 150px;
+					width: 200px;
+					height: 200px;
 					border-radius: 50%;
 				}
 				span {
@@ -503,7 +578,7 @@ section {
 						}
 					}
 					textarea {
-						height: 100px;
+						height: 150px;
 					}
 				} //form#email-form
 			} //div.form-wrapper
@@ -524,6 +599,45 @@ section {
 		} //&:about
 	} //section max-width: $break-lg
 	@media screen and (max-width: $break-md) {
+		&#about {
+			div.container {
+				div.row {
+					div.content {
+						div.img-wrapper {
+							margin-bottom: 30px;
+						} //div.img-wrapper
+						div.info {
+							div#i-am-wrapper {
+								h1.i-am-a {
+									&.primary, &.secondary {
+										width: 100%;
+									}
+								}
+							} //div#i-am-wrapper
+							a.resume {
+								margin: 0px auto;
+								width: 200px;
+								button {
+									height: 40px;
+								}
+							}
+						} //div.info
+						div.skills {
+							h2 {
+								border-bottom: 1px solid $denimJeanBlue;
+								margin: 0 auto;
+								padding: 20px 0;
+							}
+							div.skills-container {
+								div.skill-box {
+									border: none;
+								} //div.skill-box
+							} //div.skills-container
+						}
+					} //div.content
+				} //div.row
+			} //div.container
+		} //&#about
 		&#portfolio {
 			div.container-fluid {
 				div.row {
@@ -593,7 +707,7 @@ section {
 			padding: 0 10px;
 		} //div.content
 		&#about {
-				&:before {
+			&:before {
 				content: "";
 			    position: fixed;
 				background-size: 275%;
@@ -625,12 +739,23 @@ section {
 		} //&:about
 		&#portfolio {
 			div.container-fluid {
+				padding: 0;
 				div.row {
 					div.header {
+						padding: 0 20px;
 						div.container {
 							padding: 0;
 						}
 					}
+					div.content {
+						padding: 0;
+						div#grid-filter-container {
+							padding: 0;
+							div#grid-filter-wrapper {
+								padding: 0;
+							} //div#grid-filter-wrapper
+						} //div#grid-filter-container
+					} //div.content
 					div#portfolio-grid {
 						// height: auto !important;
 						div.portfolio-box {
@@ -702,6 +827,7 @@ header {
 	background-color: $denimJeanBlue;
 	background-size: 16px 16px;
 	position: fixed;
+	top: 0px;
 	z-index: 2;
 	div#header-content {
 		@include vertical-align($position: relative, $top: 40%);

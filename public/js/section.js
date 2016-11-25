@@ -274,9 +274,9 @@ function sendEmailForm() {
 				url: "//formspree.io/justin.regi.reyes@gmail.com", 
 				method: "POST", 
 				data: {
-					// name: emailer.name,
+					name: emailer.name,
 					message: emailer.message
-					// "_replyto": emailer._replyto
+					"_replyto": emailer._replyto
 				}, 
 				dataType: "json" 
 			});

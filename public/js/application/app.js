@@ -403,18 +403,24 @@ function listener() {
     var $header = $('header');
     var top = 0;
     var currentScroll = 0;
-    $(document).on('DOMMouseScroll mousewheel touchmove', function(e) {
-        currentScroll = $(this).scrollTop();
-        var delta = (e.originalEvent.wheelDelta || -e.originalEvent.detail);
-        if((currentScroll == top) && _header.showHeader ) {
-            if(_header.timeout === true) {
-                _header.timeout = false;
-                _header.animShowHeader($header);
+    var windowWidth = $(window).width();
+
+    if(windowWidth > 416) {
+        $(document).on('DOMMouseScroll mousewheel touchmove', function(e) {
+            currentScroll = $(this).scrollTop();
+            var delta = (e.originalEvent.wheelDelta || -e.originalEvent.detail);
+            if((currentScroll == top) && _header.showHeader ) {
+                if(_header.timeout === true) {
+                    _header.timeout = false;
+                    _header.animShowHeader($header);
+                }
+            } else if((delta < -1) && (_header.showHeader === false) && _header.hideHeader) {
+            	_header.animHideHeader($header);
             }
-        } else if((delta < -1) && (_header.showHeader === false) && _header.hideHeader) {
-        	_header.animHideHeader($header);
-        }
-    });
+        });
+    } else {
+        
+    }
 }
 
 function animShowHeader($header) {
@@ -728,9 +734,9 @@ function sendEmailForm() {
 				url: "//formspree.io/justin.regi.reyes@gmail.com", 
 				method: "POST", 
 				data: {
-					// name: emailer.name,
+					name: emailer.name,
 					message: emailer.message
-					// "_replyto": emailer._replyto
+					"_replyto": emailer._replyto
 				}, 
 				dataType: "json" 
 			});

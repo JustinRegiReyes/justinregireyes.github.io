@@ -904,7 +904,7 @@ $(function() {
         }
     // modal functions END
 
-    console.log("no message");
+    console.log("formspree test");
 
 });
 //# sourceMappingURL=app.js.map

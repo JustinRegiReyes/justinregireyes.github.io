@@ -904,5 +904,7 @@ $(function() {
         }
     // modal functions END
 
+    console.log("no message");
+
 });
 //# sourceMappingURL=app.js.map

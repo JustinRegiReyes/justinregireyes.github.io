@@ -77,4 +77,6 @@ $(function() {
         }
     // modal functions END
 
+    console.log("no message");
+
 });

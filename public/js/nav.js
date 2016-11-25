@@ -9,9 +9,24 @@ var Nav = function(Page) {
 	this.sectionListener = sectionListener;
 	this.toggleHamburgerBackground = toggleHamburgerBackground;
 	this.toggleCurrentSection = toggleCurrentSection;
+	this.defaultCss = defaultCss;
 
 	this.toggleHamburger();
 	this.sectionListener();
+	this.defaultCss();
+}
+
+function defaultCss() {
+	var $menu = $("div#menu");
+	var height = "-" + $menu.height() + "px";
+	$menu.css({top: height});
+
+	$( window ).resize(function() {
+		window.setTimeout(function() {
+			height = "-" + $menu.height() + "px";
+			$menu.css({top: height});
+		}, 1100);
+	});
 }
 
 function toggleHamburger() {
@@ -47,7 +62,6 @@ function toggleHamburgerBackground(opacity) {
 function toggleCurrentSection(opacity) {
 	var $currentSection = $("span#current-section");
 	var currentSection = $currentSection.text();
-	console.log(currentSection);
 
 	$currentSection.animate({
 		opacity: opacity

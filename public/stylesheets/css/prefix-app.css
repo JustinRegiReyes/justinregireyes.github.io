@@ -721,16 +721,15 @@ nav#main-nav {
 div#menu {
   height: 50px;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.85);
   position: fixed;
-  top: -50px;
   font-family: "Roboto Condensed", sans-serif;
   font-weight: bold;
   font-size: 26px;
   transition: .25s ease-out;
   z-index: 1; }
   div#menu.open {
-    top: 0px; }
+    top: 0px !important; }
   div#menu ul#options {
     width: 600px;
     height: 100%;
@@ -752,5 +751,23 @@ div#menu {
         color: black; }
         div#menu ul#options li a:hover, div#menu ul#options li a:active, div#menu ul#options li a:focus {
           text-decoration: none; }
+  @media screen and (max-width: 416px) {
+    div#menu {
+      height: 100vh; }
+      div#menu ul#options {
+        width: 100%;
+        height: 400px;
+        position: relative;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%); }
+        div#menu ul#options li {
+          display: block;
+          width: 100%;
+          top: 0%;
+          padding: 25px 0;
+          margin: 0 auto;
+          -ms-transform: none;
+          transform: none; } }
 
 /*# sourceMappingURL=prefix-app.css.map */

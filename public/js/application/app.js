@@ -735,7 +735,7 @@ function sendEmailForm() {
 				method: "POST", 
 				data: {
 					name: emailer.name,
-					message: emailer.message
+					message: emailer.message,
 					"_replyto": emailer._replyto
 				}, 
 				dataType: "json" 

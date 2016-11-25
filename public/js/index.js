@@ -6,7 +6,6 @@ $(window).on('beforeunload', function(){
 
 $(function() {
     "use strict"; // Start of use strict
-    console.log('reload');
 
     var Page = function() {
         // nav.js

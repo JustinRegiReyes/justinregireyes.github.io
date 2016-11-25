@@ -403,7 +403,7 @@ function listener() {
     var $header = $('header');
     var top = 0;
     var currentScroll = 0;
-    $(document).bind('DOMMouseScroll mousewheel', function(e) {
+    $(document).bind('DOMMouseScroll mousewheel touchmove', function(e) {
         currentScroll = $(this).scrollTop();
         var delta = (e.originalEvent.wheelDelta || -e.originalEvent.detail);
         if((currentScroll == top) && _header.showHeader ) {
@@ -827,7 +827,6 @@ $(window).on('beforeunload', function(){
 
 $(function() {
     "use strict"; // Start of use strict
-    console.log('reload');
 
     var Page = function() {
         // nav.js

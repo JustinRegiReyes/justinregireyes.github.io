@@ -222,7 +222,7 @@ section {
       top: 0;
       left: 0;
       z-index: -1;
-      background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../../../img/pancakes.png");
+      background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../../../img/pancakes.jpg");
       background-size: cover;
       -ms-transform: scaleX(-1);
       transform: scaleX(-1);

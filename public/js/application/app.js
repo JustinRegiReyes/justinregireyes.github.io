@@ -475,6 +475,7 @@ var Section = function(Page) {
 	this.emailInputListener = emailInputListener;
 	this.gridFilterListener = gridFilterListener;
 	this.filterIsotope = filterIsotope;
+	this.getImages = getImages;
 
 	this.inViewListener();
 	this.portfolioContentListener();
@@ -482,6 +483,7 @@ var Section = function(Page) {
 	this.sendEmailForm();
 	this.emailInputListener();
 	this.gridFilterListener();
+	this.getImages();
 };
 
 function inViewListener() {
@@ -710,6 +712,21 @@ function portfolioContentListener() {
 		});
 	};
 };
+
+function getImages() {
+	var _section = this;
+	var $portfolioBoxes = $("div.portfolio-box");
+	$portfolioBoxes.each(function() {
+		var $this = $(this);
+		var $image = $this.find('img.img-responsive');
+		var $spinner = $this.find('div.spinner-container');
+		var imgPath = $image.data('src');
+
+		$image.attr('src', imgPath);
+		$spinner.fadeOut();
+
+	});
+}
 
 function portfolioIsotope() {
 	var $grid = $("div#portfolio-grid");

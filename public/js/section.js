@@ -270,13 +270,14 @@ function sendEmailForm() {
 				"_replyto": $("#emailer-email").val(),
 				message: $("#emailer-message").val()
 			}
-			console.log("no message");
+			
 			$.ajax({ 
 				url: "//formspree.io/justin.regi.reyes@gmail.com", 
 				method: "POST", 
 				data: {
 					name: emailer.name,
-					"_replyto": emailer._replyto
+					"_replyto": emailer._replyto,
+					message: emailer.message
 				}, 
 				dataType: "json" 
 			});

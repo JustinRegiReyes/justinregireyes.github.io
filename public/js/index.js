@@ -77,6 +77,4 @@ $(function() {
         }
     // modal functions END
 
-    console.log("formspree test");
-
 });

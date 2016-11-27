@@ -113,8 +113,10 @@ function showHamburger() {
 		}, 500, "easeOutExpo", 
 		function() {
 			// animation complete
-			$("body").css({overflow: "visible"});
-            $("body").css({height: "auto"});
+            $("html, body").css({overflow: "visible"});
+            $("html, body").css({height: "auto"});
+            _nav.Page.header.showHeader = true;
+            _nav.Page.header.timeout = true;
 		}
 	);
 	$span4.animate({

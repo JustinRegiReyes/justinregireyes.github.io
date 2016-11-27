@@ -37,7 +37,9 @@ $(function() {
             $('div.modal').on('shown.bs.modal', function() {
                 var $this = $(this);
                 $("body").css({overflow: "hidden"});
+                $("html").css({overflow: "hidden"});
                 $("body").css({height: "100%"});
+                $("html").css({height: "100%"});
                 var $loadingIcons = $this.find('i.fa-spin');
                 if($loadingIcons.length) {
                     _page.loadImage($this);
@@ -46,6 +48,8 @@ $(function() {
 
             $('div.modal').on('hidden.bs.modal', function() {
                 $("body").css({overflow: "visible"});
+                $("html").css({overflow: "visible"});
+                $("html").css({height: "auto"});
                 $("body").css({height: "auto"});
             });
         }

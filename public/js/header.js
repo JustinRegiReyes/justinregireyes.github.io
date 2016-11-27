@@ -22,7 +22,7 @@ function listener() {
         $(document).on('DOMMouseScroll mousewheel touchmove', function(e) {
             currentScroll = $(this).scrollTop();
             var delta = (e.originalEvent.wheelDelta || -e.originalEvent.detail);
-            if((currentScroll == top) && _header.showHeader ) {
+            if((currentScroll == top) && _header.showHeader && (delta > 0)) {
                 if(_header.timeout === true) {
                     _header.timeout = false;
                     _header.animShowHeader($header);
@@ -39,6 +39,7 @@ function listener() {
 function animShowHeader($header) {
 	var _header = this;
 	$("body").css({overflow: "hidden"});
+    $("html").css({overflow: "hidden"});
     $header.css({opacity: 1});
     setTimeout(function() {
         $header.animate({
@@ -65,8 +66,6 @@ function animHideHeader($header) {
         function() {
             $header.css({opacity: 0});
             $(document).scrollTop(1);
-            _header.showHeader = true;
-            _header.timeout = true;
             _header.Page.nav.showNav();
         }
     );

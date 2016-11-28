@@ -32,7 +32,21 @@ function listener() {
             }
         });
     } else {
-        
+        var $enterWebsite = $("div#enter-website");
+        $enterWebsite.on("click", function() {
+            _header.animHideHeader($header);
+        });
+
+        $(document).on('DOMMouseScroll mousewheel touchmove', function(e) {
+            currentScroll = $(this).scrollTop();
+            var delta = (e.originalEvent.wheelDelta || -e.originalEvent.detail);
+            if((currentScroll == top) && _header.showHeader && (delta > 0)) {
+                if(_header.timeout === true) {
+                    _header.timeout = false;
+                    _header.animShowHeader($header);
+                }
+            }
+        });
     }
 }
 

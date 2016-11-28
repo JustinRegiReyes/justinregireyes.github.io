@@ -599,6 +599,8 @@ header {
           border-left: 2px solid white;
           text-align: left;
           padding-left: 30px; }
+    header div#header-content div#enter-website {
+      display: none; }
   @media screen and (max-width: 992px) {
     header div#header-content h1 {
       font-size: 50px; }
@@ -621,15 +623,36 @@ header {
         padding-left: 15px; } }
   @media screen and (max-width: 416px) {
     header div#header-content h1 {
-      font-size: 24px; }
+      font-size: 30px; }
     header div#header-content div#sub-header {
       width: 100%;
       font-size: 16px; }
       header div#header-content div#sub-header span:nth-child(1) {
         padding-right: 15px; }
       header div#header-content div#sub-header span:nth-child(3) {
-        padding-left: 15px; } }
+        padding-left: 15px; }
+    header div#header-content div#enter-website {
+      height: 34px;
+      width: 140px;
+      padding-top: 8px;
+      font-family: "Raleway", sans-serif;
+      display: block;
+      position: absolute;
+      bottom: -100px;
+      left: 0;
+      right: 0;
+      margin-right: auto;
+      margin-left: auto;
+      text-align: center;
+      border: 1px solid white;
+      color: white;
+      font-size: 12px; }
+      header div#header-content div#enter-website i {
+        font-size: 70px;
+        color: white; } }
   @media screen and (max-width: 320px) {
+    header div#header-content h1 {
+      font-size: 24px; }
     header div#header-content div#sub-header {
       font-size: 14px; } }
   @media screen and (max-height: 380px) {

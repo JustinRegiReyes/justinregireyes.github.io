@@ -888,6 +888,9 @@ header {
 				}
 			}
 		}
+		div#enter-website {
+			display: none;
+		} //div#enter-website
 	} //div#header-content
 	@media screen and (max-width: $break-md) {
 		div#header-content {
@@ -930,7 +933,7 @@ header {
 	@media screen and (max-width: $break-iphone6plus) {
 		div#header-content {
 			h1 {
-				font-size: 24px;
+				font-size: 30px;
 			}
 			div#sub-header {
 				width: 100%;
@@ -943,11 +946,36 @@ header {
 						padding-left: 15px;
 					}
 				}
-			}
+			} //div#sub-header
+			div#enter-website {
+				height: 34px;
+			    width: 140px;
+			    padding-top: 8px;
+			    font-family: "Raleway", sans-serif;
+			    display: block;
+			    position: absolute;
+		        bottom: -100px;
+			    left: 0;
+			    right: 0;
+			    margin-right: auto;
+			    margin-left: auto;
+			    text-align: center;
+			    border: 1px solid white;
+			    color: white;
+			    font-size: 12px;
+				i {
+					font-size: 70px;
+					// color: rgba(255, 255, 255, 0);
+					color: white;
+				}
+			} //div#enter-website
 		} //div#header-content
 	} //header max-width: $break-iphone6plus
 	@media screen and (max-width: $break-iphone4) {
 		div#header-content {
+			h1 {
+				font-size: 24px;
+			}
 			div#sub-header {
 				font-size: 14px;
 			}

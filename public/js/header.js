@@ -51,7 +51,7 @@ function listener() {
         $(document).on('touchmove', function(e) {
             currentScroll = $(this).scrollTop();
             var delta = (e.originalEvent.wheelDelta || -e.originalEvent.detail);
-            if((currentScroll == top) && _header.showHeader && (delta > 0)) {
+            if((currentScroll == top) && _header.showHeader) {
                 if(_header.timeout === true) {
                     _header.timeout = false;
                     _header.animShowHeader($header);

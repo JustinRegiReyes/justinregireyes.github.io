@@ -437,8 +437,9 @@ function listener() {
             }
         });
 
-        $(document).on('touchmove touch', function(e) {
-            alert('mobile scroll');
+        $(document).on('touchmove', function(e) {
+            currentScroll = $(this).scrollTop();
+            alert(currentScroll);
         });
     }
 }

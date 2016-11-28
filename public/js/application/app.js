@@ -426,7 +426,7 @@ function listener() {
             _header.animHideHeader($header);
         });
 
-        $(document).on('DOMMouseScroll mousewheel touchmove', function(e) {
+        $(document).on('DOMMouseScroll mousewheel', function(e) {
             currentScroll = $(this).scrollTop();
             var delta = (e.originalEvent.wheelDelta || -e.originalEvent.detail);
             if((currentScroll == top) && _header.showHeader && (delta > 0)) {
@@ -435,6 +435,10 @@ function listener() {
                     _header.animShowHeader($header);
                 }
             }
+        });
+
+        $(document).on('touchmove touch', function(e) {
+            alert('mobile scroll');
         });
     }
 }

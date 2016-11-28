@@ -6,6 +6,8 @@ var Header = function(Page) {
 	this.hideHeader = true;
 	this.animHideHeader = animHideHeader;
 	this.animShowHeader = animShowHeader;
+    this.lastY = undefined;
+    this.touchMoveUp = undefined;
 
 	this.listener();
 }
@@ -33,6 +35,7 @@ function listener() {
         });
     } else {
         var $enterWebsite = $("div#enter-website");
+        var _header = this;
         $enterWebsite.on("click", function() {
             _header.animHideHeader($header);
         });
@@ -51,12 +54,20 @@ function listener() {
         $(document).on('touchmove', function(e) {
             currentScroll = $(this).scrollTop();
             var delta = (e.originalEvent.wheelDelta || -e.originalEvent.detail);
-            if((currentScroll == top) && _header.showHeader) {
+            var currentY = e.originalEvent.touches[0].clientY;
+             if(currentY > _header.lastY){
+                 // moved down
+                 _header.touchMoveUp = false;
+             }else if(currentY < _header.lastY){
+                 // moved up
+                 _header.touchMoveUp = true;
+             }
+             _header.lastY = currentY;
+            if((currentScroll == top) && (_header.showHeader) && _header.touchMoveUp) {
                 if(_header.timeout === true) {
                     _header.timeout = false;
                     _header.animShowHeader($header);
                 }
-                $("span#current-section").prepend(currentScroll);
             }
         });
     }

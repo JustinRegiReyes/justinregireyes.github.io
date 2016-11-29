@@ -915,11 +915,11 @@ function hideHeaderButton() {
 	$("div#show-header").css({display: "none"});
 }
 
-$(window).on('beforeunload', function(){
-  var $header = $('header');
-  $header.css({top: 0});
-  $(window).scrollTop(0);
-});
+// $(window).on('beforeunload', function(){
+//   var $header = $('header');
+//   $header.css({top: 0});
+//   $(window).scrollTop(0);
+// });
 
 $(function() {
     "use strict"; // Start of use strict
@@ -963,10 +963,8 @@ $(function() {
             var _page = this;
             $('div.modal').on('shown.bs.modal', function() {
                 var $this = $(this);
-                $("body").css({overflow: "hidden"});
-                $("html").css({overflow: "hidden"});
-                $("body").css({height: "100%"});
-                $("html").css({height: "100%"});
+                $("html, body").css({overflow: "hidden"});
+                console.log($('html').css('height'));
                 var $loadingIcons = $this.find('i.fa-spin');
                 if($loadingIcons.length) {
                     _page.loadImage($this);
@@ -974,10 +972,7 @@ $(function() {
             });
 
             $('div.modal').on('hidden.bs.modal', function() {
-                $("body").css({overflow: "visible"});
-                $("html").css({overflow: "visible"});
-                $("html").css({height: "auto"});
-                $("body").css({height: "auto"});
+                $("html, body").css({overflow: "visible"});
             });
         }
 

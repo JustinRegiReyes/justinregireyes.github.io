@@ -431,16 +431,16 @@ function listener() {
             _header.animHideHeader($header);
         });
 
-        $(document).on('DOMMouseScroll mousewheel', function(e) {
-            currentScroll = $(this).scrollTop();
-            var delta = (e.originalEvent.wheelDelta || -e.originalEvent.detail);
-            if((currentScroll == top) && _header.showHeader && (delta > 0)) {
-                if(_header.timeout === true) {
-                    _header.timeout = false;
-                    _header.animShowHeader($header);
-                }
-            }
-        });
+        // $(document).on('DOMMouseScroll mousewheel', function(e) {
+        //     currentScroll = $(this).scrollTop();
+        //     var delta = (e.originalEvent.wheelDelta || -e.originalEvent.detail);
+        //     if((currentScroll == top) && _header.showHeader && (delta > 0)) {
+        //         if(_header.timeout === true) {
+        //             _header.timeout = false;
+        //             _header.animShowHeader($header);
+        //         }
+        //     }
+        // });
 
         $showHeader.on('click', function() {
              _header.timeout = false;

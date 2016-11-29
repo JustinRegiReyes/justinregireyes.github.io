@@ -66,6 +66,7 @@ function animSection($section) {
 	};
 
 	function animateContent() {
+		var windowWidth = $(window).width();
 		$content.animate({
 				opacity: 1,
 				top: 0
@@ -75,7 +76,9 @@ function animSection($section) {
 					setTimeout(function() {
 						_section.animIAmA();
 					}, 500);
-					_section.showHeaderButton();
+					if(windowWidth > 416) {
+						_section.showHeaderButton();
+					}
 				}
 			}
 		);	

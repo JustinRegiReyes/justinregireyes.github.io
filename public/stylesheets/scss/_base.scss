@@ -277,6 +277,8 @@ section {
 		} //div.info 
 	} //div.content
 	&#about {
+		min-height: 101vh;
+		margin-bottom: 10px;
 		&:before {
 			content: "";
 		    position: fixed;

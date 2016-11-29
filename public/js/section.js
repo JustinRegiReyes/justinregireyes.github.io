@@ -76,7 +76,7 @@ function animSection($section) {
 					setTimeout(function() {
 						_section.animIAmA();
 					}, 500);
-					if(windowWidth > 416) {
+					if(windowWidth <= 416) {
 						_section.showHeaderButton();
 					}
 				}
@@ -306,6 +306,7 @@ function sendEmailForm() {
 					message: emailer.message
 				},
 				success: success,
+				error: error,
 				dataType: "json" 
 			});
 
@@ -320,6 +321,11 @@ function sendEmailForm() {
 
 				$("div#email-sent").append(datetime);
 			};
+
+			function error() {
+				$("div#email-sent").empty();
+				$("div#email-sent").append("Please enter a valid email");
+			}
 		});
 	};
 };

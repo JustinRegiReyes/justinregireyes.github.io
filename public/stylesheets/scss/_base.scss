@@ -597,6 +597,7 @@ section {
 						border: 0px solid white;
 						padding: 8px;
 						transition: .10s ease-out;
+						border-radius: 0;
 						&.focused {
 							border-bottom: 3px solid #FDB97C;
 						}
@@ -605,6 +606,7 @@ section {
 						}
 						&[type=submit] {
 							padding: 5px;
+							background-color: #dddddd;
 							&.focused {
 								border: 0px solid white;
 							}

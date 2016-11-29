@@ -460,13 +460,15 @@ section {
             margin: 5px auto;
             border: 0px solid white;
             padding: 8px;
-            transition: .10s ease-out; }
+            transition: .10s ease-out;
+            border-radius: 0; }
             section#contact div.content div.form-wrapper form#email-form input.focused, section#contact div.content div.form-wrapper form#email-form textarea.focused {
               border-bottom: 3px solid #FDB97C; }
             section#contact div.content div.form-wrapper form#email-form input:focus, section#contact div.content div.form-wrapper form#email-form textarea:focus {
               outline: none; }
             section#contact div.content div.form-wrapper form#email-form input[type=submit], section#contact div.content div.form-wrapper form#email-form textarea[type=submit] {
-              padding: 5px; }
+              padding: 5px;
+              background-color: #dddddd; }
               section#contact div.content div.form-wrapper form#email-form input[type=submit].focused, section#contact div.content div.form-wrapper form#email-form textarea[type=submit].focused {
                 border: 0px solid white; }
               section#contact div.content div.form-wrapper form#email-form input[type=submit]:active, section#contact div.content div.form-wrapper form#email-form textarea[type=submit]:active {

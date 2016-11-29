@@ -292,6 +292,7 @@ function sendEmailForm() {
 				"_replyto": $("#emailer-email").val(),
 				message: $("#emailer-message").val()
 			}
+
 			
 			$.ajax({ 
 				url: "//formspree.io/justin.regi.reyes@gmail.com", 
@@ -300,9 +301,22 @@ function sendEmailForm() {
 					name: emailer.name,
 					"_replyto": emailer._replyto,
 					message: emailer.message
-				}, 
+				},
+				success: success,
 				dataType: "json" 
 			});
+
+			function success() {
+				$("#emailer-name").val("");
+				$("#emailer-email").val("");
+				$("#emailer-message").val("");
+				$("div#email-sent").empty();
+
+				var newDate = new Date();
+				var datetime = "Email sent: " + newDate.today() + " @ " + newDate.timeNow();
+
+				$("div#email-sent").append(datetime);
+			};
 		});
 	};
 };

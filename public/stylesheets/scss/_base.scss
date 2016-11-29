@@ -617,6 +617,11 @@ section {
 						height: 150px;
 					}
 				} //form#email-form
+				div#email-sent {
+					width: 350px;
+					margin: 0 auto;
+					color: white;
+				}
 			} //div.form-wrapper
 		} //div.content
 	} //&#contact
@@ -844,6 +849,9 @@ section {
 							}
 						}
 					} //form#email-form
+					div#email-sent {
+						width: 100%;
+					}
 				} //div.form-wrapper
 			} //div.content
 		} //&#contact

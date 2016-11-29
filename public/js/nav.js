@@ -115,6 +115,7 @@ function showHamburger() {
 			// animation complete
             $("html, body").css({overflow: "visible"});
             $("html, body").css({height: "auto"});
+                $(document).scrollTop(10);
             _nav.Page.header.showHeader = true;
             _nav.Page.header.timeout = true;
 		}

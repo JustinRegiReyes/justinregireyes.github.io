@@ -16,6 +16,8 @@ var Section = function(Page) {
 	this.gridFilterListener = gridFilterListener;
 	this.filterIsotope = filterIsotope;
 	this.getImages = getImages;
+	this.showHeaderButton = showHeaderButton;
+	this.hideHeaderButton = hideHeaderButton;
 
 	this.inViewListener();
 	this.portfolioContentListener();
@@ -70,7 +72,10 @@ function animSection($section) {
 			}, 500, "easeOutCubic", function() {
 				var sectionId = $section.attr('id');
 				if(sectionId === "about") {
-					_section.animIAmA();
+					setTimeout(function() {
+						_section.animIAmA();
+					}, 500);
+					_section.showHeaderButton();
 				}
 			}
 		);	
@@ -381,4 +386,12 @@ function filterIsotope($thisElement) {
 	}
 	
 	$grid.isotope({ filter: filterString });
+}
+
+function showHeaderButton() {
+	$("div#show-header").fadeIn();
+}
+
+function hideHeaderButton() {
+	$("div#show-header").css({display: "none"});
 }

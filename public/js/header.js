@@ -36,6 +36,7 @@ function listener() {
     } else {
         var $enterWebsite = $("div#enter-website");
         var _header = this;
+        var $showHeader = $("div#show-header");
         $enterWebsite.on("click", function() {
             _header.animHideHeader($header);
         });
@@ -51,25 +52,32 @@ function listener() {
             }
         });
 
-        $(document).on('touchmove', function(e) {
-            currentScroll = $(this).scrollTop();
-            var delta = (e.originalEvent.wheelDelta || -e.originalEvent.detail);
-            var currentY = e.originalEvent.touches[0].clientY;
-             if(currentY > _header.lastY){
-                 // moved down
-                 _header.touchMoveUp = false;
-             }else if(currentY < _header.lastY){
-                 // moved up
-                 _header.touchMoveUp = true;
-             }
-             _header.lastY = currentY;
-            if((currentScroll == top) && (_header.showHeader) && _header.touchMoveUp) {
-                if(_header.timeout === true) {
-                    _header.timeout = false;
-                    _header.animShowHeader($header);
-                }
-            }
+        $showHeader.on('click', function() {
+             _header.timeout = false;
+             _header.animShowHeader($header);
         });
+
+        // ************ Attempt at listening for touch move to bring header down ************
+        // $(document).on('touchmove', function(e) {
+        //     currentScroll = $(this).scrollTop();
+        //     var currentY = e.originalEvent.touches[0].clientY;
+        //      if(currentY > _header.lastY){
+        //          // moved down
+        //          _header.touchMoveUp = true;
+        //          console.log("move up");
+        //      }else if(currentY < _header.lastY){
+        //          // moved up
+        //          _header.touchMoveUp = false;
+        //          console.log("move down");
+        //      }
+        //      _header.lastY = currentY;
+        //     if((currentScroll == top) && (_header.showHeader) && _header.touchMoveUp) {
+        //         if(_header.timeout === true) {
+        //             _header.timeout = false;
+        //             _header.animShowHeader($header);
+        //         }
+        //     }
+        // });
     }
 }
 
@@ -87,6 +95,7 @@ function animShowHeader($header) {
                 _header.hideHeader = true;
                 _header.Page.nav.hideNav();
                 _header.Page.section.hideAboutSection();
+                _header.Page.section.hideHeaderButton();
             }
         );
     }, 500);
@@ -102,7 +111,6 @@ function animHideHeader($header) {
         }, 1000, "easeInExpo", 
         function() {
             $header.css({opacity: 0});
-            $(document).scrollTop(1);
             _header.Page.nav.showNav();
         }
     );

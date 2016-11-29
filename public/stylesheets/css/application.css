@@ -700,7 +700,7 @@ nav#main-nav {
     top: 0px;
     left: 0px;
     position: relative;
-    padding: 20px 20px 20px 0; }
+    padding: 10px 20px; }
     nav#main-nav div#hamburger-wrapper div#hamburger-background {
       content: "";
       position: absolute;
@@ -742,11 +742,6 @@ nav#main-nav {
       -o-transition: .5s ease-in-out;
       transition: .5s ease-in-out;
       cursor: pointer;
-      position: relative;
-      top: 50%;
-      -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-      transform: translateY(-50%);
       float: right; }
       nav#main-nav div#hamburger-wrapper div#hamburger span {
         display: block;

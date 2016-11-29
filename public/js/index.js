@@ -47,7 +47,6 @@ $(function() {
             $('div.modal').on('shown.bs.modal', function() {
                 var $this = $(this);
                 $("html, body").css({overflow: "hidden"});
-                console.log($('html').css('height'));
                 var $loadingIcons = $this.find('i.fa-spin');
                 if($loadingIcons.length) {
                     _page.loadImage($this);

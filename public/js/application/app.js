@@ -754,6 +754,16 @@ function portfolioContentListener() {
 				});
 			}
 		});
+
+		$portfolioBox.on('click', function(e) {
+			var $readMore = $(this).find('a.read-more');
+			var modalId = $readMore.data('target');
+			var isATag = $(event.target).hasClass('read-more');
+
+			if(isATag === false) {
+				$(modalId).modal('show');
+			}
+		});
 	};
 };
 
